@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+header {
+  @include padding($base-spacing);
+  @include span-columns(20);
+  position: absolute;
+  z-index: 5;
+}
