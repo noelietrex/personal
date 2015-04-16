@@ -1,0 +1,51 @@
+.portfolio-preview {
+  background-color: $color-brand-quinary;
+  .container {
+    max-width: 65%;
+    @include media($tablet) {
+      max-width: initial;
+    }
+    @include media($mobile) {
+      @include span-columns(5);
+    }
+  }
+}
+.preview-column-1 {
+  max-width: 50%;
+  float: left;
+  @include media($mobile) {
+    @include span-columns(5);
+    max-width: 100%;
+  }
+}
+.preview-column-2 {
+  max-width: 50%;
+  float: left;
+  @include media($mobile) {
+    @include span-columns(5);
+    max-width: 100%;
+  }
+}
+.preview-thumb {
+  @include margin($base-spacing);
+  @include calc(width, "100% - 30px");
+  float: left;
+  border: 15px solid $color-brand-primary;
+
+  img {
+    width: 100%;
+    @include transition(all 5s $ease-in-out-back);
+
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);  /* For Webkit browsers */
+    filter: gray;  /* For IE 6 - 9 */
+    -webkit-transition: all .6s ease;  /* Transition for Webkit browsers */
+    filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+    
+    &:hover {
+      filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
+      -webkit-filter: none;
+      filter: none;
+    }
+  }
+}

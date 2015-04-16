@@ -5,4 +5,5 @@ header {
   @include span-columns(20);
   position: absolute;
   z-index: 5;
+  background: rgba($color-black, 0.75);
 }

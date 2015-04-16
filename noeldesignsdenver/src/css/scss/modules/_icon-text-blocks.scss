@@ -1,0 +1,23 @@
+.icon-text {
+}
+.icon-text-block {
+	@include span-columns(5);
+	@include padding($base-spacing);
+	text-align: center;
+	background-color: $color-brand-tertiary;
+	p {
+		text-align: left;
+	}
+	.fa {
+		@include margin($base-spacing / 2 0);
+	}
+	@include media($tablet) {
+		@include span-columns(5);
+		margin-right: 0;
+		min-height: 260px;
+	}
+	@include media($mobile) {
+		@include span-columns(5);
+		min-height: 0;
+	}
+}

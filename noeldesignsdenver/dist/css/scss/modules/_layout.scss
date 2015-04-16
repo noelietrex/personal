@@ -20,28 +20,29 @@ section {
   overflow: auto;
 
   @include media($mobile) {
-    @include span-columns(4);
+    @include span-columns(5);
+    @include margin(0);
   }
 }
 
 article {
   @include outer-container;
-  @include span-columns(8);
+  @include span-columns(7);
   @include margin(0 null);
   @include padding(null $base-spacing null null);
   @include media($mobile) {
-    @include span-columns(4);
+    @include span-columns(5);
     @include padding(0);
     border: none;
   }
 }
 
 aside {
-  @include span-columns(4);
+  @include span-columns(3);
   @include padding(null null null $base-spacing);
 
   @include media($mobile) {
-    @include span-columns(4);
+    @include span-columns(5);
     @include padding(0);
     border: none;
   }

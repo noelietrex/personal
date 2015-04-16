@@ -2,7 +2,7 @@
 
 //offscreen nav
 .toggle-nav {
-  @include margin(0 0 0 1em);
+  @include margin($base-spacing * .75 0 $base-spacing * .75 $base-spacing * .75);
   float: right;
   color: $nav-color;
   &:hover {
@@ -38,7 +38,7 @@ nav {
     @include padding(0);
     list-style-type: none;
     li {
-      @include margin(0.5em);
+      @include margin($base-spacing);
       @include padding(0);
       display: inline-block;
     }
