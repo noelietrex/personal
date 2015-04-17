@@ -24,3 +24,7 @@ a[href^="tel"] {
   @include transition;
 }
 
+a, a img, img, a:link, a:visited, a:hover {
+  border: none;
+  outline: none;
+}

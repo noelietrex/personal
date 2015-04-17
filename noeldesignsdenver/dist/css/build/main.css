@@ -2001,6 +2001,10 @@ a[href^="tel"] {
   text-decoration: none;
   transition: all 0.15s ease-out 0s; }
 
+a, a img, img, a:link, a:visited, a:hover {
+  border: none;
+  outline: none; }
+
 ol {
   margin: 0 0 0 1.5em;
   padding: 0; }
@@ -2188,25 +2192,30 @@ mark {
   background: #6666ff;
   color: blue; }
 
-[class*='fa-facebook'] {
-  color: #3b5998; }
-  [class*='fa-facebook']:hover {
-    color: #355088; }
+li.facebook {
+  background-color: #3b5998; }
+  li.facebook:hover {
+    background-color: #2f4779; }
 
-[class*='fa-twitter'] {
-  color: #1c96db; }
-  [class*='fa-twitter']:hover {
-    color: #1987c5; }
+li.github, li.codepen {
+  background-color: #fff; }
+  li.github:hover, li.codepen:hover {
+    background-color: #cccccc; }
 
-[class*='fa-pinterest'] {
-  color: #c92228; }
-  [class*='fa-pinterest']:hover {
-    color: #b41e24; }
+li.twitter {
+  background-color: #1c96db; }
+  li.twitter:hover {
+    background-color: #1678af; }
 
-[class*='fa-instagram'] {
-  color: #517fa4; }
-  [class*='fa-instagram']:hover {
-    color: #487293; }
+li.pinterest {
+  background-color: #c92228; }
+  li.pinterest:hover {
+    background-color: #a01b20; }
+
+li.instagram {
+  background-color: #517fa4; }
+  li.instagram:hover {
+    background-color: #406583; }
 
 @media print {
   * {
@@ -2827,7 +2836,7 @@ input[type=search]:-ms-input-placeholder {
 
 footer {
   padding: 1em 0;
-  background-color: #e1e1e1;
+  background-color: #000;
   color: #333; }
   footer .container {
     max-width: 62.5em;
@@ -2860,56 +2869,6 @@ footer {
           height: auto; }
           footer .container .leaderboard:last-child {
             margin-right: 0; } }
-    footer .container .foot-content {
-      float: left;
-      display: block;
-      margin-right: 1.40138%;
-      width: 13.80883%;
-      margin-right: 0; }
-      footer .container .foot-content:last-child {
-        margin-right: 0; }
-      @media screen and (max-width: 500px) {
-        footer .container .foot-content {
-          float: left;
-          display: block;
-          margin-right: 5.85151%;
-          width: 78.8297%;
-          text-align: center;
-          margin: 3% auto; }
-          footer .container .foot-content:last-child {
-            margin-right: 0; } }
-  footer span {
-    font-size: 12px;
-    font-size: 1.2rem; }
-  footer ul {
-    font-size: 12px;
-    font-size: 1.2rem; }
-  footer li {
-    color: #ccc; }
-  footer a {
-    color: #ccc;
-    font-weight: 700; }
-  footer p {
-    color: #ccc; }
-  footer h4 {
-    color: #ccc;
-    text-transform: uppercase;
-    border-bottom: 2px solid #fff; }
-  footer .mall-details {
-    text-align: center;
-    float: none; }
-    footer .mall-details ul li {
-      display: inline;
-      padding: 0; }
-      footer .mall-details ul li:after {
-        content: '|';
-        padding: 0 0.25em 0 0.5em; }
-      footer .mall-details ul li.js-last:after {
-        content: ''; }
-    @media screen and (max-width: 500px) {
-      footer .mall-details {
-        float: none;
-        text-align: center; } }
   footer .legal {
     float: left; }
     footer .legal li {
@@ -2925,13 +2884,25 @@ footer {
         float: none;
         text-align: center; } }
   footer .social {
-    text-align: left; }
+    float: right; }
     footer .social li {
-      display: inline; }
+      margin: 0 0.1em;
+      display: inline-block;
+      border-radius: 50%;
+      width: 45px;
+      padding: 9px;
+      height: 45px;
+      text-align: center;
+      vertical-align: middle; }
+    footer .social .fa-2x {
+      font-size: 1.75em; }
     footer .social .fa {
-      font-size: 40px;
-      font-size: 4rem;
-      color: #ccc; }
+      vertical-align: middle;
+      color: white; }
+      footer .social .fa.fa-github {
+        color: black; }
+      footer .social .fa.fa-codepen {
+        color: black; }
     @media screen and (max-width: 500px) {
       footer .social {
         float: none;
@@ -3162,6 +3133,13 @@ footer {
     font-size: 20px;
     font-size: 2rem;
     text-transform: uppercase; }
+
+footer .logo p {
+  font-size: 28.5px;
+  font-size: 2.85rem; }
+footer .logo span {
+  font-size: 16px;
+  font-size: 1.6rem; }
 
 /* ----- Facebook Feed ----- */
 ul.tabs {
@@ -3632,6 +3610,9 @@ ul.tabs {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.5);
   padding-left: 15%; }
+
+.tumblr {
+  margin: 1em auto; }
 
 .info .left {
   float: left;

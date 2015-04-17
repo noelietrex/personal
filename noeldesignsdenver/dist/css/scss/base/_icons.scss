@@ -1,47 +1,39 @@
-[class*='fa-facebook'] {
-  color: $facebook-link-color;
+li.facebook {
+  background-color: $facebook-link-color;
 
   &:hover {
-    color: shade($facebook-link-color, 10%);
+    background-color: shade($facebook-link-color, 20%);
   }
 }
 
-[class*='fa-twitter'] {
-  color: $twitter-link-color;
+li.github, li.codepen {
+  background-color: $color-white;
 
   &:hover {
-    color: shade($twitter-link-color, 10%);
+    background-color: darken($color-white, 20%);
   }
 }
 
-[class*='fa-pinterest'] {
-  color: $pinterest-link-color;
+li.twitter {
+  background-color: $twitter-link-color;
 
   &:hover {
-    color: shade($pinterest-link-color, 10%);
+    background-color: shade($twitter-link-color, 20%);
   }
 }
 
-[class*='fa-instagram'] {
-  color: $instagram-link-color;
+li.pinterest {
+  background-color: $pinterest-link-color;
 
   &:hover {
-    color: shade($instagram-link-color, 10%);
+    background-color: shade($pinterest-link-color, 20%);
   }
 }
 
-// // Build Headings
-// $i: 1;
-// @each $value in $icons-list {
-//   [class*='#{nth($value, 1)}'] {
-//     color: nth($value, 2);
-//   }
-//   $i: $i + 1 !global;
-// }
+li.instagram {
+  background-color: $instagram-link-color;
 
-// // extend later
-// // @if $#{}-link-color !== null {
-// //   color: $color-primary-brand;
-// // } @else {
-// //   color: $#{}-link-color;
-// // }
+  &:hover {
+    background-color: shade($instagram-link-color, 20%);
+  }
+}

@@ -13,3 +13,14 @@
 		text-transform: uppercase;
 	}
 }
+
+footer {
+	.logo {
+		p {
+			@include font-size(28.5);
+		}
+		span {
+			@include font-size(16);
+		}
+	}
+}

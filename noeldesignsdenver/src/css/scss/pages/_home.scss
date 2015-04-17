@@ -57,3 +57,6 @@
 	background-color: rgba($color-white,0.5);
 	padding-left: 15%;
 }
+.tumblr {
+	@include margin($base-spacing auto);
+}
