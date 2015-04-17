@@ -2960,7 +2960,7 @@ footer {
     background-position: center center; }
 
 .portfolio-preview {
-  background-color: #e1e1e1; }
+  background-color: #000; }
   .portfolio-preview .container {
     max-width: 65%; }
     @media screen and (max-width: 1000px) {
