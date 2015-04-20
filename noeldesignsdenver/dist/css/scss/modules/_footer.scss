@@ -1,21 +1,11 @@
 @charset "UTF-8";
 
 footer {
+  clear: both;
   .container {
     @include outer-container;
     @include media($tablet) {
       padding: 0 1em;
-    }
-    .leaderboard {
-      background-image: url(/mimages/ssmgse15/foot-ad.jpg);
-      background-position: center;
-      height: 115px;
-      @include span-columns(9);
-      @include media($mobile) {
-        @include span-columns(4);
-        float: none;
-        height: auto;
-      }
     }
   }
   @include padding($base-spacing 0);
@@ -66,21 +56,13 @@ footer {
       text-align: center;
     }
   }
-
-  .footer-disclaimer {
-    display: inline-block;
-    @include font-size($disclaimer-text);
-    margin-bottom: $base-spacing/2;
-  }
-
-  .pw-logo {
-    clear: both;
+}
+@include media($mobile) {
+  footer {
     text-align: center;
-    @include margin(0 auto);
-
-    @include media($mobile) {
-      float: none;
-      text-align: center;
+    .logo {
+      @include margin(0 0 $base-spacing 0);
+      width: 100%;
     }
   }
 }

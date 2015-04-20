@@ -8,8 +8,12 @@
   &:hover {
     color: $nav-color-hover;
   }
+  @include media($tablet){
+    display: none;
+  }
 }
 nav {
+  margin-top: 0.75em;
   a {
     color: $nav-color;
     &:hover {
@@ -23,8 +27,8 @@ nav {
 .menu {
   float: right;
   visibility: hidden;
+  right:-100%;
   position: relative;
-  right: -100%;
   transition-duration: 1s;
   -webkit-transition-duration: 1s;
   &.active {
@@ -32,16 +36,6 @@ nav {
     right: 0;
     transition-duration: 1s;
     -webkit-transition-duration: 1s;
-  }
-  ul {
-    @include margin(0);
-    @include padding(0);
-    list-style-type: none;
-    li {
-      @include margin($base-spacing);
-      @include padding(0);
-      display: inline-block;
-    }
   }
 }
 
@@ -72,9 +66,10 @@ nav {
     text-align: $nav-alignment;
 
     li {
+      @include font-size($nav-font-size);
+      @include margin(0 $base-spacing / 2 0 0);
       position: relative;
       display: inline-block;
-      @include font-size($nav-font-size);
       line-height: normal;
       text-align: center;
 
@@ -138,7 +133,9 @@ nav {
 
 a.open-panel,
 a.close-panel {
+  @include margin($base-spacing * .75 0 $base-spacing * .75 $base-spacing * .75);
   display: none;
+  float: right;
 }
 
 @include media($tablet) {
@@ -172,19 +169,18 @@ a.close-panel {
 
   nav {
     position: absolute;
+    margin-top: initial; 
     @if $nav-off-canvas-side == right {
-      top: 0;
+      top: -$base-spacing;
       right: -$nav-off-canvas-width;
       width: $nav-off-canvas-width;
       height: 100%;
-      box-shadow: inset 5px 0 5px -5px shade($nav-off-canvas-bg, 20%);
     }
     @if $nav-off-canvas-side == left {
       top: 0;
       left: -$nav-off-canvas-width;
       width: $nav-off-canvas-width;
       height: 100%;
-      box-shadow: inset -5px 0 5px -5px shade($nav-off-canvas-bg, 20%);
     }
     @if $nav-off-canvas-side == down {
       width: 100%;
@@ -202,6 +198,13 @@ a.close-panel {
     ul.menu {
       border-top: 1px solid $nav-off-canvas-bg;
       background-color: $nav-off-canvas-bg;
+      visibility: visible;
+      right: initial;
+      //hack to get rid of space on right
+      @if $nav-off-canvas-side == right {
+        width: 110%;
+        right: -10%;
+      }
       @if $nav-off-canvas-side == down {
         max-height: 0;
         overflow-y: hidden;
@@ -254,7 +257,6 @@ a.close-panel {
     @if $nav-hamburger-side == left {
       left: $base-spacing;
     }
-    margin-top: -($base-spacing * 3);
   }
 
   a.open-panel

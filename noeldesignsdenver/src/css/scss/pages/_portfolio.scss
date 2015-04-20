@@ -1,0 +1,23 @@
+.portfolio-thumb {
+	border: 10px solid $color-brand-primary;
+	float: left;
+	width: 24%;
+	@include margin(0 1% 0 0);
+	@include media($mobile) {
+		@include margin($base-spacing 0);
+		width: 100%;
+		clear: both;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+.display-work {
+	@include margin($base-spacing 0);
+	width: 750px;
+	max-width: 100%;
+	img {
+		width: 100%;
+	}
+}

@@ -22,6 +22,14 @@ li.twitter {
   }
 }
 
+li.linkedin {
+  background-color: $linkedin-link-color;
+
+  &:hover {
+    background-color: shade($linkedin-link-color, 20%);
+  }
+}
+
 li.pinterest {
   background-color: $pinterest-link-color;
 

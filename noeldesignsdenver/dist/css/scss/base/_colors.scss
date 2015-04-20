@@ -40,6 +40,10 @@ $colors: (
   color: $base-font-color;
 }
 
+.white {
+  color: $color-white;
+}
+
 // ie9 (.ie9)
 
 .ie9 .gradient { filter: none; }

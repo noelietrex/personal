@@ -6,4 +6,8 @@ header {
   position: absolute;
   z-index: 5;
   background: rgba($color-black, 0.75);
+  @include media($tablet){
+  	@include padding($base-spacing 0 $base-spacing $base-spacing);
+  	@include margin(0);
+  }
 }

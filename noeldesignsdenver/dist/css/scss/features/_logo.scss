@@ -13,6 +13,16 @@
 		text-transform: uppercase;
 	}
 }
+@include media($mobile){
+	.logo {
+		p {
+			@include font-size(28.5);
+		}
+		span {
+			@include font-size(16);
+		}
+	}
+}
 
 footer {
 	.logo {

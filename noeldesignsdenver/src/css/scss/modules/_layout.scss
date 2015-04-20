@@ -7,11 +7,17 @@
 }
 
 .content {
+
+  //remove this later
+  min-height: 300px;
+  //remove this later
+
+  @include padding($base-spacing * 2 0);
   @include border-radius;
   background-color: $content-bg;
 
   @include media($tablet) {
-    @include padding(0 $base-spacing);
+    @include padding($base-spacing);
   }
 }
 

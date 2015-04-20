@@ -1,11 +1,18 @@
 .banner {
   height: auto;
-  max-height: em(500);
-  margin-bottom: $base-spacing;
+  max-height: 350px;
   overflow: hidden;
 
   img {
     width: 100%;
     background-position: center center;
   }
+}
+@include media($mobile){
+	.banner {
+		img {
+			min-height: 150px;
+			width: auto;
+		}
+	}
 }
