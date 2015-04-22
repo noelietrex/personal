@@ -63,21 +63,20 @@
 
 
 
-<!-- RESUME BANNER -->
+<!-- CONTACT BANNER -->
   <div class="banner">
-    <img src="/images/banner2.jpg">
+    <img src="/images/banner1.jpg">
   </div>
-<!-- RESUME BANNER -->
+<!-- CONTACT BANNER -->
 
-<!-- ABOUT CONTENT -->
+<!-- CONTACT CONTENT -->
   <div class="content">
-    <h1>My Resume</h1>
-    <div class="resume">
-      <img src="/images/resume.jpg">
-    </div>
-    <p><a href="resume.pdf" target="_blank"><button>Download Resume</button></a></p>
+    <h1>Your message has been sent!</h1><br />
+		
+		<p><a href="/contact.html">&laquo; Back to Contact Form</a></p>
+    
   </div>
-<!-- RESUME CONTENT -->
+<!-- CONTACT CONTENT -->
 
 
 
