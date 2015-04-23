@@ -3663,6 +3663,13 @@ label {
   .display-work img {
     width: 100%; }
 
+.border {
+  border: 1px solid #ccc; }
+
+.portfolio-page h3 {
+  padding: 1em 0 0.5em;
+  clear: both; }
+
 .resume img {
   margin: 2em 0;
   border: 1px solid #ccc;

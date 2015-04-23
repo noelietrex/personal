@@ -21,3 +21,14 @@
 		width: 100%;
 	}
 }
+
+.border {
+	border: $base-border;
+}
+
+.portfolio-page {
+	h3 {
+		@include padding($base-spacing 0 $base-spacing / 2 0);
+		clear: both;
+	}
+}
