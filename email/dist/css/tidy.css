@@ -1,0 +1,379 @@
+/*** uncss> filename: src/css/main.css ***/
+
+/* Client-specific Styles & Reset */
+
+body {
+  width: 100% !important;
+  min-width: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* .ExternalClass applies to Outlook.com (the artist formerly known as Hotmail)  */
+
+img {
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic;
+  width: auto;
+  max-width: 100%;
+  float: left;
+  clear: both;
+  display: block;
+}
+
+center {
+  width: 100%;
+  min-width: 620px;
+}
+
+p {
+  margin: 0 0 0 0;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+td {
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  border-collapse: collapse !important;
+}
+
+table,
+tr,
+td {
+  padding: 0;
+  vertical-align: top;
+  text-align: left;
+}
+
+hr {
+  color: #e3e3e3;
+  background-color: #e3e3e3;
+  height: 1px;
+  border: none;
+}
+
+/* Responsive Grid */
+
+table.body {
+  height: 100%;
+  width: 100%;
+}
+
+table.container {
+  width: 620px;
+  margin: 0 auto;
+  text-align: inherit;
+}
+
+table.row {
+  padding: 0px;
+  width: 100%;
+  position: relative;
+}
+
+td.wrapper {
+  padding: 10px 20px 0px 0px;
+  position: relative;
+}
+
+table.columns {
+  margin: 0 auto;
+}
+
+table.columns td {
+  padding: 10px 0px 10px;
+}
+
+table.row td.last,
+table.container td.last {
+  padding-right: 0px;
+}
+
+table.six {
+  width: 300px;
+}
+
+table.twelve {
+  width: 620px;
+}
+
+td.expander {
+  visibility: hidden;
+  width: 0px;
+  padding: 0 !important;
+}
+
+/* Block Grid */
+
+/* Alignment & Visibility Classes */
+
+table.center,
+td.center {
+  text-align: center;
+}
+
+img.center {
+  margin: 0 auto;
+  float: none;
+}
+
+/* Typography */
+
+body,
+table.body,
+p,
+td {
+  color: #999999;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  line-height: 1.5625;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #333;
+}
+
+h2 {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #333;
+}
+
+body,
+table.body,
+p,
+td {
+  font-size: 16px;
+  line-height: 1.5625;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+a {
+  color: #b83e3b;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #7ec4bd !important;
+}
+
+a:active {
+  color: #7ec4bd !important;
+}
+
+a:visited {
+  color: #7ec4bd !important;
+}
+
+/* Panels */
+
+/* Buttons */
+
+/* Outlook First */
+
+/*  Media Queries */
+
+@media only screen and (max-width: 641.37931px) {
+  table[class="body"] img {
+    width: auto !important;
+    height: auto !important;
+  }
+
+  table[class="body"] center {
+    min-width: 0 !important;
+  }
+
+  table[class="body"] .container {
+    width: 90% !important;
+  }
+
+  table[class="body"] .row {
+    width: 100% !important;
+    display: block !important;
+  }
+
+  table[class="body"] .wrapper {
+    display: block !important;
+    padding-right: 0 !important;
+  }
+
+  table[class="body"] .columns {
+    table-layout: fixed !important;
+    float: none !important;
+    width: 100% !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    display: block !important;
+  }
+
+  table[class="body"] table.columns td {
+    width: 100% !important;
+  }
+
+  table[class="body"] table.columns td.expander {
+    width: 1px !important;
+  }
+}
+
+.inner-container {
+  max-width: 580px;
+}
+
+body {
+  background-color: #e3e3e3;
+}
+
+p,
+span {
+  hyphens: auto;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.toast {
+  display: none;
+  width: 0;
+  max-width: 0;
+  height: 0;
+  max-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  mso-hide: all;
+  visibility: hidden;
+  color: transparent;
+}
+
+.header {
+  max-width: 620px;
+  background-color: #d0c047;
+}
+
+.header td {
+  width: 50%;
+  vertical-align: middle;
+}
+
+.nav {
+  max-width: 620px;
+  background-color: #b83e3b;
+}
+
+.nav a {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.main-container {
+  background-color: #ffffff;
+}
+
+.call-out {
+  background-color: #b83e3b;
+  text-align: center;
+}
+
+.call-out h2 {
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-weight: 200;
+  letter-spacing: 6.5px;
+  border-top: 2px solid #d0c047;
+}
+
+.call-out p {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.no-bot-pad {
+  padding-bottom: 1 !important;
+}
+
+td.wrapper.last {
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+.topnav li {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+.content-img {
+  margin-right: 20px;
+  max-width: 280px;
+}
+
+.ads img {
+  margin-bottom: 10px;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer table {
+  background-color: #d0c047;
+}
+
+.footer p {
+  color: #ffffff;
+  text-align: center;
+}
+
+.social-icons {
+  padding: 0 5px;
+}
+
+.footnav {
+  list-style-type: none;
+}
+
+.footnav li {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .topnav {
+    display: none;
+  }
+
+  .footnav li {
+    display: block !important;
+    margin: 0 !important;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
