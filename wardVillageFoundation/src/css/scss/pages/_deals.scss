@@ -1,0 +1,235 @@
+// =dealflow
+#deal-flow .tile-list.tile-list--alt {
+  background: none!important;
+  border: none!important;
+}
+a.print-share-button {
+  display: none;
+}
+
+#deal-flow .tile-list__content {
+  max-width: 100%!important;
+}
+
+#deal-flow .tile.tile--expand .tile__wrap, #deal-flow .tile-list__content.tile-list__content--list .tile .tile__wrap {
+  min-height: 220px!important;
+  padding: $base-spacing * 2 0 $base-spacing * 2 $base-spacing * 10.1!important;
+}
+#deal-flow .tile.tile--expand .tile__thumbnail, #deal-flow .tile-list__content.tile-list__content--list .tile .tile__thumbnail, #deal-flow .tile.tile--expand .notice, #deal-flow .tile-list__content.tile-list__content--list .tile .notice {
+  top: 2em!important;
+}
+
+.deal-flow-wrapper__left {
+	@include span-columns(2);
+  @include padding(0);
+
+  @include media($mobile) {
+    @include span-columns(4);
+    @include padding(0);
+    border: none;
+  }
+  .navlist {
+  	@include padding($base-spacing 0 0);
+    @include margin($base-spacing 0 0);
+    border-top: $base-border;
+  }
+  ul {
+  	@include padding(0);
+  }
+  li {
+  	@include font-size(18);
+    &:hover {
+      color: $color-brand-tertiary;
+    }
+    &.deal-flow-active {
+      color: $color-brand-tertiary;
+    }
+  }
+}
+.deal-flow-wrapper__right {
+  @include outer-container;
+  @include span-columns(10);
+  @include margin(0);
+  @include padding(0 0 0 $base-spacing);
+
+  @include media($mobile) {
+    @include span-columns(4);
+    @include padding(0);
+    border: none;
+  }
+  #deal-flow .tile-list__content {
+    margin: 0;
+  }
+}
+
+@include media($tablet){
+  .deal-flow-wrapper__left .navlist {
+    display: none;
+  }
+}
+@include media($mobile){
+  #deal-flow-wrapper {
+    @include margin(-1em 0 0 0);
+  }
+  li.deal-flow-filter-panel__button {
+    @include margin($base-spacing / 2 0);
+    @include padding($base-spacing / 2);
+    background-color: $color-brand-primary;
+    color: $color-white;
+    text-align: center;
+    font-weight: 500;
+    &.deal-flow-active {
+      background-color: shade($color-brand-primary, 20%);
+      color: $color-white;
+    }
+  }
+  .deal-flow-wrapper__left li.deal-flow-active {
+    color: $color-white;
+  }
+  #deal-flow .tile__thumbnail-mask {
+    display: none;
+  }
+  #deal-flow .tile.tile--expand .tile__wrap, #deal-flow .tile-list__content.tile-list__content--list .tile .tile__wrap {
+    padding: 1em 0!important; //I know, I know :\
+  }
+  .deal-flow-wrapper__left ul {
+    @include padding(0);
+  }
+}
+
+
+//Deal Flow style over-writes
+#featuredDealSlider .featuredDealThumb {
+  img {
+    max-width: 100%!important;
+    max-height: 100%!important;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#deal_flow_content h2 span {
+  @include font-size(42);
+  font-weight: 200!important;
+  font-family: $heading-font-family!important;
+  color: $heading-color-primary!important;
+}
+
+#deal-flow h3.tile__title {
+  @include font-size(18);
+  font-family: $heading-font-family!important;
+  color: $heading-color-primary!important;
+}
+
+.shop ul>li.deal-flow-filter-panel__button {
+  @include padding(1rem 2rem!important);
+  @include margin(0 0 2px 0);
+  background-color: $color-brand-primary;
+  color: $color-white;
+  display: block;
+  text-align: left;
+  &.deal-flow-active {
+    background-color: $color-brand-tertiary;
+  }
+}
+
+li.deal-flow-filter-panel__button, span.filter__title {
+  @include font-size(16);
+  font-family: $base-font-family!important;
+  font-weight: normal!important;
+}
+
+#deal-flow p.tile__subtitle, #deal-flow p {
+  @include font-size($base-font-size);
+  font-family: $base-font-family!important;
+  font-weight: normal;
+}
+
+#deal-flow .tile:hover h3.tile__title, #deal-flow .tile:active h3.tile__title {
+  color: $color-brand-tertiary!important;
+  h3 {
+    color: $color-brand-tertiary!important;
+  }
+}
+
+#deal-flow .tile__thumbnail-mask {
+  width: 150px!important;
+  height: 150px;
+  margin: 0 auto;
+}
+
+#deal-flow .tile__thumbnail-mask:after {
+  box-shadow: none!important;
+  border: none!important;
+
+}
+
+.tile:hover, .tile:active {
+  .tile__thumbnail-mask {
+    background-color: $color-black!important;
+    img {
+      opacity: 0.75;
+    }
+  }
+}
+
+// =Inside Deals Pages Overwriting to match design on store pages weeeeeeee
+#deal-flow .blocks__block {
+  @include padding(0 $base-spacing!important);
+  border-right: 2px solid #999!important;
+  box-shadow: none!important;
+}
+
+#deal-flow .blocks {
+  background-color: $color-light-grey!important;
+  h4.blocks__title {
+    font-family: "Roboto slab", serif;
+    font-size: 1.8rem;
+    color: $color-brand-tertiary!important;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  p.blocks__description {
+    color: $color-brand-secondary!important;
+    font-family: $base-font-family;
+  }
+  .blocks__link, a.blocks__link:link, a.blocks__link:visited {
+    color: $color-brand-secondary!important;
+    font-family: $base-font-family!important;
+  }
+}
+
+#deal-flow h1.title {
+  @include font-size(30);
+  font-weight: 700!important;
+  font-family: $heading-font-family!important;
+  color: $heading-color-secondary!important;
+}
+h2.title.title--secondary {
+  font-family: $heading-font-family!important;
+  color: $heading-color-primary!important;
+}
+
+@include media($tablet){
+  .shop ul>li {
+    @include padding(0!important); // stops jumping behavior in mobile nav on this page
+  }
+
+  #deal-flow .blocks__block {
+    @include padding($base-spacing!important);
+    border-bottom: 2px solid white!important;
+    box-shadow: none!important;
+  }
+}
+
+@include media($mobile){
+  .shop ul>li {
+    @include padding(0!important); // stops jumping behavior in mobile nav on this page
+  }
+  #deal-flow .blocks__block {
+    @include padding($base-spacing!important);
+    border-bottom: 2px solid white!important;
+    box-shadow: none!important;
+  }
+}

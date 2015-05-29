@@ -1,0 +1,382 @@
+.shop {
+	ul {
+		@include vertical-list;
+	}
+}
+
+header.component-store-primary {
+	@include span-columns(5);
+	z-index: 1!important;
+}
+
+.component-store-secondary {
+	@include span-columns(7);
+	float: right;
+	margin-right: 0;
+}
+
+.tabbed_section_container {
+	@include padding($base-spacing * 5 0 $base-spacing 0);
+	width: 100%;
+	clear: both;
+}
+
+.storeFollowButton {
+	@include padding($base-spacing $base-spacing * 2);
+	@include font-size(14);
+	background-color: $color-brand-tertiary;
+	background: $color-brand-tertiary;
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	color: white;
+	text-transform: uppercase;
+	&:hover {
+		background-color: $color-light-grey;
+		background: $color-light-grey;
+		color: $color-white;
+	}
+}
+
+#dirmapbutton.btn {
+	@include padding(0 $base-spacing);
+}
+
+.store {
+	a.twoStateButton {
+		margin-top: -1em!important;
+	}
+}
+
+#dirmapbutton {
+  margin-top: 6px;
+}
+
+.follow-zone.follow-zone--loaded {
+	float: left;
+	margin-top: 3px;
+}
+
+.component-store-description {
+	p {
+		@include margin(0 0 $base-spacing * 2 0);
+		line-height: $base-spacing * 1.75;
+	}
+}
+
+.store {
+	.btn:hover, .button:hover, .cta:hover, .search-goog input[type=submit]:hover, button:hover {
+		background: transparent;
+	}
+}
+
+// =SOCIAL TAB COMPONENT
+.component-store-social {
+	position: absolute;
+	right: 0;
+}
+
+li.social-tab-component {
+	@include margin(0 0 0 $base-spacing / 2);
+	display: inline-block;
+	&.js-active {
+		button {
+			background-color: $color-brand-tertiary;
+			color: $color-white;
+		}
+	}
+	button {
+		@include padding($base-spacing $base-spacing * 2);
+		background-color: $color-light-grey;
+		color: $color-brand-tertiary;
+		text-transform: uppercase;
+		&:hover {
+			background-color: $color-brand-tertiary;
+			color: $color-white;
+		}
+	}
+}
+
+.socialcontent {
+	@include padding($base-spacing);
+	display: none;
+	position: absolute;
+	right: -6px;
+	border-radius: 6px;
+	background-color: $color-white;
+	width: 400px;
+	z-index: 5;
+}
+
+.js-active {
+	.socialcontent {
+		display: block;
+	}
+}
+
+// =infoblock
+.component-info-block {
+	@include margin($base-spacing * 5 0 0 0);
+}
+
+.info-block {
+	@include padding($base-spacing * 2);
+	@include margin(0 0 4% 4%);
+
+	width: 46%;
+	float: right;
+	background-color: $color-light-grey;
+	h2 {
+		@include font-size(18);
+		color: $color-brand-tertiary;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
+	.info-block-content {
+		// @include vertical-align;
+	}
+}
+
+// =tabbed-section
+.tabbed_section_control_panel {
+	@include margin(0 0 $base-spacing * 2);
+	li {
+		@include padding($base-spacing $base-spacing * 2);
+		@include margin(0 $base-spacing / 2 0 0);
+		background-color: $color-light-grey;
+		color: $color-brand-tertiary;
+		display: inline-block;
+		text-transform: uppercase;
+		font-weight: bold;
+		&.active {
+			background-color: $color-brand-tertiary;
+			color: $color-white;
+		}
+		&:hover {
+			background-color: $color-brand-tertiary;
+			color: $color-white;
+		}
+	}
+}
+
+.tabbed_section_content > h2 { display: none; }
+.tabbed_section_compressed {
+	@include margin($base-spacing 0 0);
+	@include padding(0 0 $base-spacing);
+	border-bottom: $base-border;
+	overflow: auto;
+	.thumb-wrap {
+		@include margin(0 $base-spacing 0 0);
+		background-color: $color-black;
+		float: left;
+		border: 1px solid $color-light-grey;
+	}
+	.deal-thumb-cover {
+		width: 150px;
+		height: 150px;
+		display: block;
+		background-size: cover;
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+	&:last-child {
+		border-bottom: none;
+	}
+}
+
+.sale-info-wrapper {
+	float: left;
+	max-width: 70%;
+
+	@include media($mobile) {
+		max-width: 50%;
+	}
+}
+
+.sale-end-date {
+	@include padding($base-spacing / 2);
+	float: right;
+	top: 0;
+	background-color: $color-light-grey;
+	text-transform: uppercase;
+}
+
+.notice--ends-today{
+	background-color: $color-primary-red;
+	color: $color-white;
+}
+
+.notice--ends-within-week, .notice--ends-tomorrow {
+	background-color: $color-white;
+	color: $color-primary-red;
+	border: 1px solid $color-primary-red;
+}
+
+h3.saleTitle {
+	@include font-size(22);
+}
+
+@include media($tablet) {
+	.component-store-secondary {
+		@include margin($base-spacing * 3 0 $base-spacing 0);
+		clear: both;
+		width: 100%;
+	}
+
+	header.component-store-primary {
+		width: 100%;
+	}
+
+	.info-block {
+		@include margin(0 2% 2% 0);
+		float: left;
+		width: 47%;
+	}
+
+	.component-store-social {
+		display: none;
+	}
+
+	.tabbed_section_container {
+		padding-top: $base-spacing;
+	}
+
+	.component-info-block {
+		@include margin(0);
+	}
+}
+
+@include media($mobile) {
+	.sale-info-wrapper {
+		float: left;
+		width: 60%;
+	}
+	body.store {
+		overflow: hidden;
+	}
+	#dirmapbutton {
+		display: none;
+	}
+	.info-block {
+		@include margin(0 0 3px -1em);
+		@include padding($base-spacing);
+		width: 110%;
+		min-height: 0;
+	}
+	.tabbed_section_control_panel li {
+	  width: 100%;
+	  margin: 0 0 2px 0;
+	  text-align: center;
+	}
+	.sale-info-wrapper {
+		width: 100%;
+	}
+	.follow-zone.follow-zone--loaded {
+		@include margin(0 auto);
+		text-align: center;
+		float: none;
+		width: 100%;
+		.storeFollowButton {
+			@include padding($base-spacing $base-spacing * 3);
+		}
+	}
+	.thumb-wrap {
+		display: none;
+	}
+}
+
+
+
+
+
+//Product From Store Page
+
+.product-top-logo {
+	text-align: center;
+	img {
+		border: $base-border;
+	}
+}
+
+.product-image-wrapper, .sale-image-wrapper {
+	@include padding($base-spacing * 2);
+	float: left;
+	background-color: $color-light-grey;
+	img {
+		max-width: 350px;
+	}
+}
+
+.visit-share {
+	@include margin(0);
+	li {
+		display: inline-block;
+		max-width: 40px;
+	}
+}
+.product-content-wrapper {
+	@include margin(0 0 0 $base-spacing * 2);
+	float: left;
+	> ul {
+		margin-left: 2em;
+	}
+}
+
+.more-products-wrapper {
+	@include padding($base-spacing * 2 0 0 0);
+  width: 100%;
+  clear: both;
+  height: auto;
+  overflow: auto;
+}
+
+.prod-wrap li {
+	@include padding($base-spacing);
+	@include margin($base-spacing $base-spacing $base-spacing 0);
+  float: left;
+  border: $base-border;
+}
+
+a.more-prods-text {
+  clear: both;
+  float: left;
+}
+
+.follow-zone.follow-zone--loaded, .follow-zone {
+	float: left;
+	margin-top: 3px;
+	opacity: 1!important;
+	display: block!important;
+	transition: none!important;
+}
+
+@include media($tablet){
+	.product-image-wrapper, .sale-image-wrapper {
+		float: none;
+		margin: 0 auto;
+	}
+	.product-image img {
+		max-width: 100%;
+	  width: auto;
+	  text-align: center;
+	  margin: 0 auto;
+	}
+	.product-content-wrapper {
+  	@include margin($base-spacing 0);
+	}
+	.more-products-wrapper {
+		@include padding($base-spacing 0);
+	}
+}
+
+@include media($mobile){
+	.hide-mobile {
+		display: none;
+	}
+	.info-block h2 {
+		float: left;
+		margin-right: $base-spacing;
+	}
+}

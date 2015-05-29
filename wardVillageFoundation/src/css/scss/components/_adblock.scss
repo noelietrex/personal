@@ -1,0 +1,22 @@
+.component-adblock {
+	@include padding($base-spacing 0);
+	background-color: $color-brand-primary;
+	clear: both;
+	text-align: center;
+	max-width: 100%;
+	overflow: hidden;
+
+	.adblock {
+		@include outer-container;
+		max-width: 100%;
+	}
+	.ad-slot div {
+		@include margin(0 auto);
+		max-width: 100%;
+	}
+
+	img {
+		margin: 0 auto;
+		max-width: 100%;
+	}
+}

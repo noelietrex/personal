@@ -1,0 +1,20 @@
+section.home {
+	@include padding(0);
+	background-color: transparent;
+	@include media($mobile) {
+		@include margin(0);
+		width: 100%;
+		overflow: hidden;
+	}
+}
+ul#hero-carousel {
+	@include margin(0);
+}
+.home {
+	.hero-banner .container {
+		@include padding(0);
+	}
+	.component-social-bar .container{
+		@include padding(0);
+	}
+}

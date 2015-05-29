@@ -1,0 +1,13 @@
+.cta {
+  background: none;
+  box-shadow: inset 0 0 0 2px $base-link-color;
+  @include font-family($heading-font-family);
+  @include font-size($base-font-size);
+  color: $base-link-color;
+
+  &:hover {
+    background: none;
+    box-shadow: inset 0 0 0 2px $base-link-color;
+    color: $base-link-color;
+  }
+}

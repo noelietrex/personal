@@ -1,0 +1,49 @@
+//=login
+
+div.mBox .mBox_button {
+	min-height: 35px!important;
+}
+
+#loginSubmitButton, .ingress_form #forgottenPasswordSubmitButton, .ingress_form #newUserSubmitButton, a.twoStateButton {
+	display: inline-block;
+  min-width: 3em;
+  @include margin(0!important);
+  @include padding($base-spacing $base-spacing * 2);
+  @include border-radius;
+  border: 0;
+  background: $base-button-color!important;
+  font-family: $base-font-family!important;
+  font-weight: 700;
+  text-align: center;
+  color: $color-white;
+  cursor: pointer;
+  line-height: 1;
+  font-family: $base-font-family;
+  @include font-size($base-font-size);
+  text-shadow: none;
+  box-shadow: none;
+  border: none!important;
+
+  &:hover {
+    background: $color-brand-primary!important;
+    color: $color-white;
+  }
+
+  &:focus {
+    background: darken($color-off-white, 20%);
+    background-image: 0;
+    outline: none;
+  }
+}
+
+.ingress_form ul li {
+	clear: both;
+}
+.ingress_form form label {
+	float: left;
+}
+
+span#mGreeting strong:before {
+	content:"\a";
+	white-space: pre;
+}

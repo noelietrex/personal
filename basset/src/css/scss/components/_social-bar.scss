@@ -1,0 +1,46 @@
+.component-social-bar {
+	background-image: url(/mimages/cypress15/social-images.jpg);
+
+	.overlay {
+		background-color: rgba($color-brand-primary, .85);
+	}
+
+	ul {
+		@include padding($base-spacing * 3.5 0);
+		@include horizontal-list;
+		margin: 0;
+		text-align: center;
+
+		li {
+			@include border-radius(50%);
+			@include size(50px);
+			display: inline-block;
+			margin-right: 1em;
+			padding: 5px;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+	i {
+		color: $color-white;
+	}
+}
+@include media($mobile) {
+	.component-social-bar {
+		.container {
+			background-size: cover;
+		}
+		ul {
+			@include padding($base-spacing);
+			li {
+				@include size(35px);
+				.fa-3x {
+					font-size: 2em;
+				}
+			}
+		}
+	}
+}

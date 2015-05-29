@@ -1,0 +1,65 @@
+//Buzz
+.featureCarouselOnShoptopiaHomePage-cnt-bdy .fancyCarouselOuter .fancyCarouselLeftArrow {
+  float: left;
+  text-align: right;
+  width: 145px;
+  margin-top: 25px;
+}
+.fancyCarouselThumbs{
+  float: left;
+  max-width: 300px;
+  text-align: center;
+}
+.featureCarouselOnShoptopiaHomePage-cnt-bdy .fancyCarouselOuter .fancyCarouselRightArrow {
+  float: right;
+  text-align: right;
+  margin-top: 25px;
+}
+.fancyCarouselOuter {
+	clear: both;
+	overflow: auto;
+}
+.cnt-bdy.featureCarouselOnShoptopiaHomePage-cnt-bdy {
+  max-width: 600px;
+}
+.mf_feature___featureImage {
+  float: left;
+  margin-right: 1em;
+}
+.featureOnHomePageMain-cnt-row.featuredArticle-cnt-row {
+  @include margin($base-spacing 0);
+  @include padding($base-spacing 0);
+  border-bottom: $base-border;
+  overflow: auto;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+@include media($tablet) {
+	.cnt-bdy.featureCarouselOnShoptopiaHomePage-cnt-bdy {
+		display: none;
+	}
+}
+
+// Login Page
+.profile {
+  .ingress_form #newUserSubmitButton {
+    margin-top: 10px;
+  }
+  .ingress_form #loginSubmitButton {
+  }
+  .ingress_form .ingressBtnTall {
+    background-color: $color-brand-quaternary;
+    background: $color-brand-quaternary;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    &:hover {
+      background-color: shade($color-brand-quaternary, 20%);
+      background: shade($color-brand-quaternary, 20%);
+    }
+  }
+}

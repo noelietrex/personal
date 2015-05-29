@@ -1,0 +1,7 @@
+//Directions
+#mapContainer {
+	@include margin(0 0 $base-spacing * 2 0);
+}
+#map-canvas {
+	max-width: 100%;
+}

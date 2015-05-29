@@ -1,0 +1,34 @@
+ # Site settings
+title: Ward Village Foundation
+email: noel@placewise.com
+description: "The Ward Village Foundation is dedicated to supporting forward thinking initiatives that honor Hawai‘i’s rich history by fostering the community that will continue to make Ward Village an ideal neighborhood to live, work, shop, learn and play."
+baseurl: "WardVillageFoundation"
+url: "http://quattromani.github.io/WardVillageFoundation/styleguide/"
+author: "UNIKITTY"
+twitter_username: UNIKITTY
+github_username:  UNIKITTY
+disqus: UNIKITTY
+
+# Build settings
+exclude: ['node_modules', 'scss', 'DAM']
+
+google_analytics: false
+google_analytics_id: UA-XXXXXXXX-X
+jquery_version: 1.11.2
+
+sitemap:
+  file: "/sitemap.xml"
+  exclude:
+      - "/atom.xml"
+      - "/feed.xml"
+      - "/feed/index.xml"
+  include_posts:
+      - "/index.html"
+  change_frequency_name: "change_frequency"
+  priority_name: "priority"
+
+mall-name: 'Ward Village Foundation'
+mall-address: '???'
+mall-phone: '888-111-1111'
+
+hours: 10am - 9pm

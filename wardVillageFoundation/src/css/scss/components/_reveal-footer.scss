@@ -1,0 +1,49 @@
+.reveal-wrapper {
+	background-color: $color-white;
+}
+body.home .reveal-wrapper {
+	background-color: transparent;
+}
+.component-reveal-footer {
+	position: fixed;
+	display: inline-block;
+	bottom: 0;
+	width: 100%;
+	min-height: 5.5em;
+	@include padding($base-spacing 0);
+	background-color: $color-brand-primary;
+	z-index: -3;
+
+	ul {
+		@include horizontal-center;
+		@include horizontal-list;
+		li {
+			display: inline-block;
+
+			@include media($mobile) {
+				margin-bottom: .5em;
+			}
+		}
+
+		img {
+			vertical-align: middle;
+		}
+	}
+
+	@include media($mobile) {
+		min-height: 8em;
+	}
+}
+@include media($mobile) {
+	.home .reveal-wrapper {
+		@include padding(0);
+	}
+	.reveal-wrapper {
+		@include padding($base-spacing * 3 0 0 0);
+	}
+	.component-reveal-footer {
+		ul {
+			@include padding($base-spacing / 2 0);
+		}
+	}
+}

@@ -1,0 +1,20 @@
+- name: 'Home'
+  url: '/'
+
+- name: 'Shop'
+  url: '/directory'
+
+- name: 'Events'
+  url: '/events'
+
+- name: 'Deals'
+  url: '/sales'
+
+- name: 'Buzz'
+  url: '/spotlight'
+
+- name: 'Info'
+  url: '/info'
+
+- name: 'Jobs'
+  url: '/jobs'

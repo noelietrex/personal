@@ -1,0 +1,41 @@
+.ephemeral_form_wrapper {
+	@include padding($base-spacing * 2);
+	@include margin(0 $base-spacing 0 0);
+	max-width: 50%;
+	border: $base-border;
+	float: right;
+	
+	@include media($tablet) {
+		@include margin(0 0 ($base-spacing * 2) 0);
+		max-width: 100%;
+		float: none;
+	}
+
+	@include media($mobile) {
+		@include padding(0);
+		border: none;
+	}
+}
+
+.ephemeral_form_wrapper {
+	label {
+		font-family: $base-font-family;
+		font-size: $base-font-size;
+	}
+
+	input, input[type]:not([type=range]):not([type=submit]), select, textarea {
+		@include margin($base-spacing/2 0 $base-spacing);
+		border-radius: $base-border-radius;
+		border: $base-border;
+	}
+
+	button {
+		background-color: $base-button-color;
+		color: $color-white;
+
+		&:hover {
+			background-color: $base-button-color-hover;
+			color: $color-white;
+		}
+	}
+}

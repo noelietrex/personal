@@ -1,0 +1,65 @@
+.hours-component {
+	position: absolute;
+	right: 0;
+	bottom: $base-spacing * 9;
+	@include padding($base-spacing $base-spacing * 2);
+	background-color: rgba($color-brand-primary, $site-alpha);
+	text-align: right;
+	z-index: 999;
+	span{
+		clear: both;
+	}
+	p {
+		margin-bottom: 0.333em;
+	}
+	a {
+		color: $color-brand-primary-complimentary;
+	}
+}
+
+// =MobileSearchBar
+.mobile-search-bar {
+	@include padding($base-spacing / 2);
+	display: none;
+	background-color: $color-brand-primary;
+	height: auto;
+	overflow: auto;
+	text-align: center;
+	.search-submit {
+		position: absolute;
+		color: $color-brand-primary;
+		left: 73%;
+	}
+	a {
+		@include font-size(20);
+		color: $color-white;
+	}
+	input#search-field {
+		background-color: $color-white;
+	}
+}
+.mobile-search {
+	@include margin(0 0 0 $base-spacing);
+	float: left;
+	width: 80%;
+}
+@include media($mobile) {
+	.mobile-search-bar {
+		display: block;
+		width: 100%;
+	}
+	.hours-component {
+		bottom: 0;
+		text-align: center;
+		width: 100%;
+		background-color: rgba($color-black, $site-alpha);
+		span {
+			clear: none;
+			font-weight: bold;
+		}
+		p {
+			@include margin(0);
+		}
+		a { display: none; }
+	}
+}

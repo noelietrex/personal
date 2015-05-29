@@ -1,0 +1,114 @@
+.component-events-bar {
+	position: relative;
+
+	.container	{
+		@include padding($base-spacing * 2 0);
+		background-image: url(/mimages/cypress15/events-image.jpg);
+		background-repeat: no-repeat;
+		background-position: left top;
+		overflow: hidden;
+		height: auto;
+	}
+
+	h2 {
+		@include font-size(72);
+		margin: 0;
+		font-weight: 900;
+	}
+
+	.events-bar-overlay {
+		position: absolute;
+		right: 0;
+		height: 90%;
+		width: 45%;
+		margin-top: ($base-spacing * 1.75);
+		background-color: rgba($color-brand-primary, .65);
+		z-index: 99;
+
+		@include media($tablet) {
+			width: 90%;
+		}
+
+		@include media($mobile) {
+			width: 70%;
+			height: 3.5em;
+			margin-top: 1em;
+		}
+	}
+
+	.events-bar-overlay-text {
+		@include padding($base-spacing * 3 $base-spacing * 9 $base-spacing * 3 0);
+		float: right;
+		position: relative;
+		width: 40%;
+		margin-bottom: ($base-spacing*2);
+		color: $color-white;
+		text-align: right;
+		z-index: 100;
+		min-height: 385px;
+
+		@include media($tablet) {
+			@include padding(($base-spacing*3) $base-spacing ($base-spacing*3) $base-spacing);
+			width: 70%;
+			min-height: 0;
+		}
+
+		h2,
+		p {
+			color: currentColor;
+		}
+
+		@include media($mobile) {
+			width: 80%;
+			margin-bottom: 0;
+			min-height: 0;
+		}
+	}
+
+	&:after {
+		background-image: url(/mimages/cypress15/white-bar.jpg);
+		height: 250px;
+		width: 78%;
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+
+		@include media($mobile) {
+			width: 90%;
+			height: 150px;
+			margin-top: -1.5em;
+		}
+	}
+}
+
+@include media($mobile) {
+	.component-events-bar{
+		.container	{
+			@include padding(0);
+			margin-bottom: .5em;
+			background-size: 155%;
+			right: 20%;
+			background-position: 0 top;
+		}
+	}
+	.component-events-bar h2 {
+		@include font-size(40);
+		@include margin(0);
+	}
+	.component-events-bar .events-bar-overlay-text {
+		@include padding($base-spacing);
+	}
+	.events-bar-overlay-text {
+		@include margin(0);
+		padding-bottom: 0;
+		a.btn-primary {
+			float: left;
+			margin-top: 6em;
+		}
+		p {
+			display: none;
+		}
+	}
+}

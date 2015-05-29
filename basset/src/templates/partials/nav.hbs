@@ -1,0 +1,85 @@
+<a href="#" class="open-panel"><span></span></a>
+
+<nav role="navigation">
+	<div class="container">
+		<ul class="navigation menu">
+			{{#each nav}}
+			<li>
+				<a href="{{url}}"><span>{{name}}</span></a>
+			</li>
+			{{/each}}
+			<li class="utility">
+				<a href="#" class="search-submit" target="_blank"><i class="fa fa-search"></i></a>
+
+				<form class="search SEWsearchForm" id="search">
+					<label for="search-field">Search</label>
+					<input type="text" id="search-field" class="search-field" placeholder="Search" data-initial-value="Search">
+					<button value="Submit" id="search-submit" class="search-submit" type="button"></button>
+				</form>
+
+
+
+				<script type="text/javascript">
+					$(function(){
+						$(".SEWsearchForm input.search-field").keydown(function(e) {
+							if(e.keyCode == 13) {
+								var field = $(e.target);
+								if(field.val() != field.attr('data-initial-value')) SEWsearchFormSubmit(field.val());
+								return false;
+							}
+						});
+						$(".SEWsearchForm button.search-submit").click(function(e) {
+							var field = $(e.target).parent().find("input.search-field");
+							if(field.val() != field.attr('data-initial-value')) SEWsearchFormSubmit(field.val());
+						});
+					});
+
+					function SEWsearchFormSubmit(terms) {
+						if(terms.length > 2 && terms.indexOf('search') == -1) window.location.href = "/search/all/" + escape(terms.replace(/[\s]/g, '+'));
+					}
+
+					if( ! ('placeholder' in document.createElement('input'))) {
+						$(function(){
+							$(".search-field").each(function(){
+								$(this).val($(this).attr('data-initial-value'));
+							}).focus(function() {
+								if ($(this).val() == $(this).attr('data-initial-value')) $(this).val("");
+							}).blur(function() {
+								if($(this).attr("value") == "") $(this).val($(this).attr('data-initial-value'));
+							});
+						});
+					}
+				</script>
+
+			</li>
+			<li class="utility">
+				<a href="/directions" target="_blank"><i class="fa fa-car"></i></a>
+			</li>
+			<li  class="utility">
+
+				<div id="login-user">
+					<ul id="logged_in_nav">
+						<li class="nav-login"> <span id="mGreeting">Hello <strong></strong></span>
+							<ul id="login">
+								<li><a id="edit_profile_link" target="_blank">My Profile</a></li>
+								<li><a id="feed_link" target="_blank">My Stores</a></li>
+								<li class="last nav-logout"><a class="nav-logout" href="javascript:logout_13();" target="_blank">Log Out</a></li>
+							</ul>
+						</li>
+					</ul>
+
+
+					<ul id="membernav" class="horzlist loggedout provisional">
+						<li>
+							<span class="nav-login user-login" onclick="javascript:window.location.href='/user/new/?start=login';">Log In</span>
+							<span class="hey-already">or</span>
+							<span class="nav-register user-login" onclick="javascript:window.location.href='/user/new/';">Register</span>
+						</li>
+					</ul>
+
+				</div>
+
+			</li>
+		</ul>
+	</div>
+</nav>

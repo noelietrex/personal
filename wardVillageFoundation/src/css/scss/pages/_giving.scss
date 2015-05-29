@@ -1,0 +1,51 @@
+.giving {
+	strong {
+		color: $color-brand-quaternary;
+	}
+	section{
+		div {
+			overflow: auto;
+		}
+	}
+}
+.half {
+	@include span-columns(6);
+	&.right {
+		@include margin(0);
+	}
+}
+
+.left{
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.right-border {
+	border-right: 2px solid $color-black;
+}
+
+.left-border {
+	border-left: 2px solid $color-black;
+}
+
+.pad {
+	@include padding($base-spacing * 2);
+}
+
+@include media($mobile){
+	.half {
+		@include span-columns(4);
+	}
+	.right, .left {
+		float: none;
+	}
+	.right-border, .left-border {
+		border: none;
+	}
+	.pad {
+		@include padding(0);
+	}
+}

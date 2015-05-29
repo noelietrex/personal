@@ -1,0 +1,64 @@
+.ifeature-wrap {
+
+}
+#ifeatures {
+  @include padding($base-spacing 0 $base-spacing / 2 $base-spacing * 6);
+  background: rgba($color-brand-quaternary, 0.9);
+  border-radius: $base-border-radius;
+  background-image: url(/mimages/CenterCal15/bridgeport-icon.png);
+  background-repeat: no-repeat;
+  background-position: $base-spacing * 2 $base-spacing;
+  bottom: 3.8em;
+  position: absolute;
+  width: 100%;
+  li {
+    @include padding($base-spacing);
+  }
+  a {
+    color: $color-white;
+  }
+}
+
+.iFeatures {
+	position: absolute;
+	width: 100%;
+  @include padding($base-spacing);
+  @include border-radius($base-border-radius $base-border-radius 0 0);
+  background-color: $color-brand-quaternary;
+  color: $color-white;
+
+  img {
+  	float: left;
+  	margin-right: $base-spacing;
+  }
+
+  strong {
+  	@include font-size(22);
+  }
+
+  p {
+  	margin: 0;
+  	line-height: 50px;
+		vertical-align: middle;
+  }
+
+  a {
+  	color: $color-white;
+  	font-weight: 700;
+  }
+}
+
+//Op message
+.OpMessage {
+  @include padding($base-spacing);
+  background-color: red;
+  color: $color-white;
+  position: absolute;
+  border-radius: $base-border-radius;
+  bottom: 8em;
+  width: 100%;
+  p {
+    @include margin(0);
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie ie8 no-js" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 no-js" lang="en"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en" dir="ltr"><!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typography - Body Text |  Cypress</title>
+
+  
+  <meta name="description" content="With a unique mix of stores, restaurants, and amusements, Bassett Place provides an environment of leisure, style and entertainment" />
+  
+  <meta name="author" content="Max Quattromani">
+  <meta name="rating" content="general">
+
+  <meta name="format-detection" content="telephone=no">
+
+ 	<meta name="robots" content="index, follow">
+
+  <link rel="stylesheet" href="../css/build/main.min.css" >
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+	<!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="maxquattromani">
+    <meta name="twitter:url" content="http://quattromani.github.io/Cypress/styleguide//">
+    <meta name="twitter:creator" content="maxquattromani">
+    <meta name="twitter:title" content="Typography - Body Text - Cypress">
+    <meta name="twitter:description" content="">
+
+</head>
+
+<body class="">
+    <!--[if lt IE 9]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+<div class="outer-wrapper">
+	<div class="inner-wrapper">
+
+		<header role="banner" class="header-banner">
+	<div class="container">
+		<div class="mall-logo">
+			<a href="Cypress">
+				<img src="../images/mall-logo.png" alt="Bassett Place">
+			</a>
+		</div>
+	</div>
+</header>
+
+		<div class="hero-banner">
+	<ul id="hero-carousel">
+		<li>
+			<img src="../images/hero-image.jpg" alt=''>
+		</li>
+	</ul>
+
+	<div class="hours">
+	Today's Hours:<br>
+	10am - 9pm<br>
+	<a href="/hours">View Calendar &raquo;</a>
+</div>
+
+
+	<a href="#" class="open-panel"><span></span></a>
+
+<nav role="navigation">
+	<div class="container">
+		<ul class="navigation menu">
+			
+			<li>
+				<a href="/"><span>Home</span></a>
+			</li>
+			
+			<li>
+				<a href="/directory"><span>Shop</span></a>
+			</li>
+			
+			<li>
+				<a href="/events"><span>Events</span></a>
+			</li>
+			
+			<li>
+				<a href="/sales"><span>Deals</span></a>
+			</li>
+			
+			<li>
+				<a href="/spotlight"><span>Buzz</span></a>
+			</li>
+			
+			<li>
+				<a href="/info"><span>Info</span></a>
+			</li>
+			
+			<li>
+				<a href="/jobs"><span>Jobs</span></a>
+			</li>
+			
+			<li class="utility">
+				<a href="#" class="search-submit" target="_blank"><i class="fa fa-search"></i></a>
+
+				<form class="search SEWsearchForm" id="search">
+					<label for="search-field">Search</label>
+					<input type="text" id="search-field" class="search-field" placeholder="Search" data-initial-value="Search">
+					<button value="Submit" id="search-submit" class="search-submit" type="button"></button>
+				</form>
+
+
+
+				<script type="text/javascript">
+					$(function(){
+						$(".SEWsearchForm input.search-field").keydown(function(e) {
+							if(e.keyCode == 13) {
+								var field = $(e.target);
+								if(field.val() != field.attr('data-initial-value')) SEWsearchFormSubmit(field.val());
+								return false;
+							}
+						});
+						$(".SEWsearchForm button.search-submit").click(function(e) {
+							var field = $(e.target).parent().find("input.search-field");
+							if(field.val() != field.attr('data-initial-value')) SEWsearchFormSubmit(field.val());
+						});
+					});
+
+					function SEWsearchFormSubmit(terms) {
+						if(terms.length > 2 && terms.indexOf('search') == -1) window.location.href = "/search/all/" + escape(terms.replace(/[\s]/g, '+'));
+					}
+
+					if( ! ('placeholder' in document.createElement('input'))) {
+						$(function(){
+							$(".search-field").each(function(){
+								$(this).val($(this).attr('data-initial-value'));
+							}).focus(function() {
+								if ($(this).val() == $(this).attr('data-initial-value')) $(this).val("");
+							}).blur(function() {
+								if($(this).attr("value") == "") $(this).val($(this).attr('data-initial-value'));
+							});
+						});
+					}
+				</script>
+
+			</li>
+			<li class="utility">
+				<a href="/directions" target="_blank"><i class="fa fa-car"></i></a>
+			</li>
+			<li  class="utility">
+
+				<div id="login-user">
+					<ul id="logged_in_nav">
+						<li class="nav-login"> <span id="mGreeting">Hello <strong></strong></span>
+							<ul id="login">
+								<li><a id="edit_profile_link" target="_blank">My Profile</a></li>
+								<li><a id="feed_link" target="_blank">My Stores</a></li>
+								<li class="last nav-logout"><a class="nav-logout" href="javascript:logout_13();" target="_blank">Log Out</a></li>
+							</ul>
+						</li>
+					</ul>
+
+
+					<ul id="membernav" class="horzlist loggedout provisional">
+						<li>
+							<span class="nav-login user-login" onclick="javascript:window.location.href='/user/new/?start=login';">Log In</span>
+							<span class="hey-already">or</span>
+							<span class="nav-register user-login" onclick="javascript:window.location.href='/user/new/';">Register</span>
+						</li>
+					</ul>
+
+				</div>
+
+			</li>
+		</ul>
+	</div>
+</nav>
+
+</div>
+
+
+		<div class="reveal-wrapper">
+			<div class="component-deals-bar">
+	<div class="deals-bar-overlay">
+	</div>
+	<div class="container">
+		<div class="deals-bar-overlay-text">
+			<h2>Deals</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, aliquam, soluta? Ullam quaerat, assumenda officiis quidem. Placeat perspiciatis voluptatibus nihil officiis mollitia nobis, beatae, blanditiis laudantium nesciunt voluptates, obcaecati magnam, molestiae ipsa?</p>
+
+			<a href="/deals" class="btn btn-primary">View All Deals</a>
+		</div>
+	</div>
+</div>
+
+			<div class="component-social-bar">
+	<div class="overlay">
+
+		<div class="container">
+			<div class="overlay">
+				<ul>
+					<li>
+						<i class="fa fa-facebook"></i>
+					</li>
+					<li>
+						<i class="fa fa-twitter"></i>
+					</li>
+					<li>
+						<i class="fa fa-pinterest"></i>
+					</li>
+					<li>
+						<i class="fa fa-instagram"></i>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+			<div class="component-events-bar">
+	<div class="events-bar-overlay">
+	</div>
+	<div class="container">
+		<div class="events-bar-overlay-text">
+			<h2>Events</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, aliquam, soluta? Ullam quaerat, assumenda officiis quidem. Placeat perspiciatis voluptatibus nihil officiis mollitia nobis, beatae, blanditiis laudantium nesciunt voluptates, obcaecati magnam, molestiae ipsa?</p>
+
+			<a href="/events" class="btn btn-primary">View All Events</a>
+		</div>
+	</div>
+</div>
+
+			<div class="component-adblock">
+	<div class="adblock">
+		<img src="http://placehold.it/650x100">
+	</div>
+</div>
+
+
+			 	  <!-- Footer Component -->
+ 	  <footer role="contentinfo">
+ 	  	<div class="content">
+ 	  		<div class="container">
+
+ 	  			<hr class="mall">
+
+ 	  			<div class="contact-social">
+ 	  				<div class="footer-contact">
+ 	  					<form action="">
+ 	  						<input type="text" name="email" placeholder="Enter Your Email">
+ 	  						<button type="submit">
+                	<i class="fa fa-envelope-o fa-lg"></i>
+            		</button>
+ 	  					</form>
+ 	  					<span>
+ 	  						Be the first to find out about exclusive deals and events at Bassett Place.
+ 	  					</span>
+ 	  				</div>
+
+ 	  				<div class="footer-social">
+ 	  					<ul>
+ 	  						<li>
+ 	  							<i class="fa fa-facebook"></i>
+ 	  						</li>
+ 	  						<li>
+ 	  							<i class="fa fa-twitter"></i>
+ 	  						</li>
+ 	  						<li>
+ 	  							<i class="fa fa-pinterest"></i>
+ 	  						</li>
+ 	  						<li>
+ 	  							<i class="fa fa-instagram"></i>
+ 	  						</li>
+ 	  					</ul>
+ 	  				</div>
+ 	  			</div>
+
+ 	  			<ul>
+ 	  				<li><a href="">Home</a></li>
+ 	  				<li><a href="">Employement</a></li>
+ 	  				<li><a href="">Leasing</a></li>
+ 	  				<li><a href="">Privacy Policy</a></li>
+ 	  				<li><a href="">Terms of Use</a></li>
+ 	  				<li><a href="">Contact</a></li>
+ 	  			</ul>
+
+ 	  			<ul>
+ 	  				<li>
+ 	  					6101 Gateway Blvd W, El Paso, TX 79925
+ 	  				</li>
+ 	  				<li>
+ 	  					<a href="">DIRECTIONS &raquo;</a>
+ 	  				</li>
+ 	  				<li>
+ 	  					<a href="">915-772-7479</a>
+ 	  				</li>
+ 	  			</ul>
+
+ 	  		</div>
+ 	  	</div>
+ 	  </footer>
+ 	  <!-- ./Footer Component -->
+
+		</div>
+
+		<div class="component-reveal-footer">
+	<ul>
+		<li>
+			<img src="../images/placewise-logo.png" alt="Placewise Media">
+		</li>
+		<li>
+			<img src="../images/cypress-logo.png" alt="Cypress">
+		</li>
+	</ul>
+</div>
+
+
+	</div>
+</div>
+    <!-- scripts -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="../js/build/production.min.js"></script>
+
+    
+
+    <script>
+    	jQuery('#hero-carousel').slippry({
+			  // pager
+			  pager: false,
+
+			  // controls
+			  auto: false,
+
+			  //speed
+			  speed: 500
+			});
+    </script>
+    <script src="http://localhost:4000/livereload.js"></script>
+  </body>
+  </html>
+

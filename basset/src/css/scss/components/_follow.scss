@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+@import "node_modules/mathsass/dist/math";
+
+$items: 4;
+
+.component-follow {
+	@include horizontal-center;
+	position: fixed;
+	bottom: 2em;
+	z-index: 99991;
+
+	ul {
+		@include size(60px);
+		@include font-size(30);
+		list-style: none;
+	}
+
+	input[type=checkbox] {
+		display: none;
+	}
+
+	.menu-button {
+		@include box-shadow(0 0px 10px 0px $color-grey);
+		@include size(60px);
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin: -30px 0 0 -30px;
+		@include border-radius(50%);
+		background: #fff;
+		overflow: hidden;
+		line-height: 60px;
+		text-align: center;
+		text-decoration: none;
+		cursor: pointer;
+		z-index: 10;
+
+		&:before {
+			@include font-family($fontawesome);
+			@include font-size(30);
+			content: '\f1d8';
+			color: $color-brand-primary;
+		}
+	}
+
+	.menu-item {
+		@include centerer;
+		@include size(60px);
+		@include border-radius(50%);
+		display:inline-block;
+		margin: -30px 0 0 -30px;
+		background-color: $color-white;
+		line-height: 60px;
+		text-align:center;
+		vertical-align:middle;
+		transform: translate(0px, 0px);
+		transition: transform 500ms;
+		z-index: -2;
+
+		&.fa {
+			line-height: inherit;
+		}
+
+		a {
+			color: $color-brand-primary;
+			position: relative;
+			text-decoration: none;
+		}
+
+		&:active {
+			background: $color-light-grey;
+		}
+	}
+}
+
+$radius: 120px;
+
+$angle: -180deg / ($items - 1);
+
+@for $i from 1 through $items {
+
+	$alpha: ($i * $angle);
+	$x: sin(($angle * $i) - $angle - 0) * $radius;
+	$y: cos(($angle * $i) - $angle - -180) * $radius;
+
+	.component-follow input:checked ~ .menu-item:nth-child(#{$i + 2}) {
+		@include box-shadow(0 0px 10px 0px $color-grey);
+		transition-delay: ($i * 75ms);
+		transform: translate($y, $x);
+	}
+}

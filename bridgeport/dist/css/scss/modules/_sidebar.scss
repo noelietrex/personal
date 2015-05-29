@@ -1,0 +1,42 @@
+.spotlightSidebar-cnt-row {
+  @include margin(null null $base-spacing);
+  display: inline-block;
+
+  img {
+    @include margin(null $base-spacing null null);
+    float: left;
+  }
+
+  p {
+    @include font-size(14);
+    line-height: initial;
+  }
+}
+
+.spotlightImageLink img {
+	border: $base-border;
+}
+
+.sidebar h3 a {
+	color: $color-brand-primary;
+}
+
+.adBlock-300-250 {
+  max-width: 100%;
+  overflow: hidden;
+	width: 300px;
+	height: auto;
+	@include margin(0 0 $base-spacing 0);
+}
+
+h4.fancyParamHeaderTwo.mf_spotlight___spotlightTitle a {
+  color: $color-brand-secondary;
+  text-transform: none;
+}
+
+.spotlightSidebar-bubble-wrpr {
+  .span-4.last {
+    float: left;
+    max-width: 55%;
+  }
+}

@@ -1,0 +1,34 @@
+ # Site settings
+title: Cypress
+email: max@maxquattromani.com
+description: "With a unique mix of stores, restaurants, and amusements, Bassett Place provides an environment of leisure, style and entertainment"
+baseurl: "Cypress"
+url: "http://quattromani.github.io/Cypress/styleguide/"
+author: "Max Quattromani"
+twitter_username: maxquattromani
+github_username:  quattromani
+disqus: maxquattromani
+
+# Build settings
+exclude: ['node_modules', 'scss', 'DAM']
+
+google_analytics: false
+google_analytics_id: UA-XXXXXXXX-X
+jquery_version: 1.11.2
+
+sitemap:
+  file: "/sitemap.xml"
+  exclude:
+      - "/atom.xml"
+      - "/feed.xml"
+      - "/feed/index.xml"
+  include_posts:
+      - "/index.html"
+  change_frequency_name: "change_frequency"
+  priority_name: "priority"
+
+mall-name: 'Bassett Place'
+mall-address: '6101 Gateway Blvd W, El Paso, TX 79925'
+mall-phone: '915-772-7479'
+
+hours: 10am - 9pm

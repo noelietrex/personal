@@ -1,0 +1,238 @@
+@charset "UTF-8";
+
+.inner-wrapper {
+  // background-image: url(/mimages/CenterCal15/inner.jpg);
+  // background-repeat: no-repeat;
+  // background-position-x: center;
+  // background-size: 100%;
+  @include media($tablet){
+    background-position: center 6em;
+    background-size: 300%;
+  }
+  @include media($mobile){
+    background-size: 450%;
+  }
+}
+
+.container {
+  @include outer-container;
+  position: relative;
+}
+
+.content {
+  background-color: $color-white;
+  @include margin($base-spacing * 5 0 0 0);
+  @include media($tablet) {
+    @include margin($base-spacing * 15 0 0 0);
+    @include padding(0 $base-spacing);
+  }
+  @include media($mobile) {
+  }
+}
+
+section {
+  @include margin($base-spacing 0);
+  @include padding($base-spacing * 2 0 $base-spacing * 4);
+  overflow: auto;
+  background-color: $color-white;
+  min-height: 325px;
+
+  .home-nav-content {
+    @include margin(0 0 $base-spacing 0);
+    display: block;
+    overflow: auto;
+  }
+
+  @include media($mobile) {
+    min-height: none;
+    @include span-columns(4);
+  }
+}
+
+article {
+  @include outer-container;
+  @include span-columns(16);
+  @include margin(0);
+
+  @include media($mobile) {
+    @include span-columns(4);
+    @include padding(0);
+    border: none;
+  }
+}
+
+aside {
+  @include span-columns(4);
+  @include padding(0 $base-spacing 0 0);
+  border-right: $base-border;
+
+  @include media($mobile) {
+    @include span-columns(4);
+    @include padding(0);
+    border: none;
+  }
+}
+
+.directory {
+  article {
+    @include outer-container;
+    @include span-columns(10);
+    @include padding(0 0 0 $base-spacing);
+
+    @include media($mobile) {
+      @include span-columns(4);
+      @include padding(0);
+      border: none;
+    }
+  }
+
+  aside.sidebar {
+    @include span-columns(6);
+    @include padding(0 0 0 $base-spacing * 2);
+    border: none;
+
+    @include media($tablet) {
+      @include span-columns(4);
+      @include padding(0);
+    }
+
+    @include media($mobile) {
+      @include span-columns(4);
+    }
+  }
+}
+
+.info {
+  article {
+    @include outer-container;
+    @include span-columns(10);
+    @include padding(0 0 0 $base-spacing);
+
+    @include media($tablet) {
+      @include span-columns(4);
+    }
+
+    @include media($mobile) {
+      @include span-columns(4);
+      @include padding(0);
+      border: none;
+    }
+  }
+
+  aside.sidebar {
+    @include span-columns(6);
+    @include padding(0 0 0 $base-spacing * 2);
+    border: none;
+
+    @include media($tablet) {
+      @include span-columns(4);
+    }
+
+    @include media($mobile) {
+      @include span-columns(4);
+      @include padding(0);
+    }
+  }
+}
+
+.sales {
+  section aside {
+    min-height: 300px;
+    @include media($tablet) {
+      min-height: 0;
+    }
+  }
+}
+
+.store {
+  section aside {
+    min-height: 300px;
+    @include media($tablet) {
+      min-height: 0;
+    }
+  }
+  aside {
+   @include span-columns(4);
+  }
+  article {
+    @include outer-container;
+    @include span-columns(10);
+    @include padding(0 0 0 $base-spacing);
+    
+    @include media($tablet) {
+      @include span-columns(8);
+    }
+
+    @include media($mobile) {
+      @include span-columns(4);
+      @include padding(0);
+      border: none;
+    }
+  }
+
+  aside.sidebar {
+    @include span-columns(6);
+    @include padding(0);
+    @include margin(0);
+    border: none;
+
+    @include media($mobile) {
+      @include span-columns(4);
+      @include padding(0);
+      @include margin($base-spacing 0);
+    }
+  }
+  section.store-bottom {
+    @include span-columns(16);
+    float: right;
+  }
+}
+
+@include media($tablet) {
+  section {
+    aside, .store aside {
+      display: none;
+    }
+  }
+  article {
+    @include span-columns(8);
+  }
+  aside.sidebar {
+    @include margin($base-spacing 0);
+    @include span-columns(8);
+  }
+  section {
+    @include padding($base-spacing 0);
+  }
+  .store {
+    aside.sidebar {
+      @include margin($base-spacing 0 0);
+    }
+    section.store-bottom {
+      @include span-columns(8);
+    }
+  }
+}
+
+@include media($tablet) {
+  .store {
+    section aside {
+      display: none;
+    }
+  }
+}
+
+@include media($mobile) {
+  article {
+    @include span-columns(4);
+  }
+  aside.sidebar {
+    @include span-columns(4);
+  }
+  .store {
+    section.store-bottom {
+      @include margin(0);
+      @include padding(0);
+    }
+  }
+}

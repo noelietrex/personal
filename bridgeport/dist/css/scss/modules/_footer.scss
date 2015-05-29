@@ -1,0 +1,341 @@
+@charset "UTF-8";
+.reveal-footer .container {
+	margin-top: 2em;
+}
+footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	@include padding($base-spacing 0);
+	background-color: $footer-bg;
+	background: url(/mimages/CenterCal15/footer-bg.png) repeat;
+	color: $footer-text;
+
+	span {
+		@include font-size($footer-font-size);
+	}
+
+	ul {
+		@include font-size(15.4);
+	}
+
+	a {
+		color: $footer-link-color;
+		font-weight: $footer-link-font-weight;
+	}
+
+	p {
+		clear: left;
+		@include font-size($disclaimer-text);
+		@include margin($base-spacing * 2 0);
+	}
+
+	.container {
+		background-color: transparent;
+	}
+
+	.mall-details {
+		float: right;
+		text-align: right;
+		@include media($tablet) {
+			text-align: center;
+		}
+		@include media($mobile) {
+			@include margin(0 $base-spacing);
+			float: none;
+			text-align: left;
+		}
+	}
+
+	.map {
+		@include margin(0 0 0 $base-spacing);
+		float: right;
+	}
+
+	#map-canvas {
+		max-height: 180px;
+		max-width: 320px;
+		@include border-radius($base-border-radius);
+	}
+	#mapDirectionsContainer { display: none; }
+
+	.legal {
+		@include padding($base-spacing 0);
+		@include horizontal-list(piped);
+		float:left;
+
+		@include media($mobile) {
+			@include margin(0 $base-spacing);
+			float: none;
+			text-align: left;
+		}
+	}
+
+	.social {
+		@include horizontal-list;
+		float: right;
+		text-align: right;
+
+		.fa {
+			@include font-size(40);
+		}
+
+		@include media($mobile) {
+			float: none;
+			text-align: center;
+		}
+	}
+
+	.footer-disclaimer {
+		display: inline-block;
+		@include font-size($disclaimer-text);
+		margin-bottom: $base-spacing/2;
+	}
+
+	.pw-logo {
+		float: left;
+
+		@include media($tablet) {
+			float: none;
+			text-align: center;
+			@include margin($base-spacing auto);
+		}
+	}
+	.mgmt-logo {
+		float: right;
+	}
+
+	&.reveal-footer {
+		height: 385px;
+		z-index: 0;
+	}
+
+	&.sticky-footer {
+		position: fixed;
+		z-index: 999;
+		bottom: 0;
+		width: 100%;
+		background: $color-black;
+		color: $color-brand-quaternary;
+
+		ul {
+			float: left;
+			@include horizontal-list;
+			margin: 0;
+
+			li {
+				margin-right: $base-spacing * 2;
+
+				&.js-last:after {
+					margin: 0;
+				}
+
+				img {
+					margin-right: $base-spacing;
+					vertical-align: middle;
+				}
+
+				a {
+					@include font-size(18);
+					vertical-align: middle;
+				}
+			}
+		}
+
+		#login-user {
+			float: right;
+
+			a, span {
+				@include font-size(16);
+				font-weight: 500;
+				text-decoration: underline;
+				&.hey-already {
+					text-decoration: none;
+				}
+				&:hover {
+					cursor: pointer;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+
+	@include media($tablet){
+		text-align: center;
+		position: relative;
+		p {
+			@include margin(0 $base-spacing);
+			text-align: left;
+		}
+		&.reveal-footer {
+			height: auto;
+			z-index: 0;
+			.container {
+				@include margin(0);
+			}
+		}
+		&.sticky-footer ul li img {
+			display: block;
+		}
+		.mall-details {
+			clear: both;
+			float: none;
+		}
+		.legal {
+			clear: both;
+			float: none;
+		}
+		.hours {
+			@include margin(0 $base-spacing);
+			text-align: left;
+		}
+		.map {
+			@include margin(0);
+			float: none;
+		}
+		#map-canvas {
+			@include margin($base-spacing auto);
+		}
+		.mgmt-logo {
+			float: none;
+			img {
+				@include margin($base-spacing auto);
+			}
+		}
+	}
+}
+
+.mobile-hours, .mobile-social {
+	display: none;
+}
+
+.sign-up-box {
+	display: inline-block;
+	@include padding($base-spacing);
+	@include border-radius;
+	background-color: $color-dark-grey;
+	input {
+		@include margin(0 10px 0 0);
+		float: left;
+	}
+	input[type=email]{
+		@include padding(0 $base-spacing / 2);
+		max-width: 250px;
+	}
+	button{
+		@include padding ($base-spacing * 0.35 $base-spacing * 1.5);
+		@include margin(0 $base-spacing / 2 0 0);
+		float: left;
+		background-color: $color-brand-quaternary;
+		color: $color-white;
+		border: none;
+		text-transform: uppercase;
+		&:hover {
+			cursor: pointer;
+		}
+		&:after {
+			content: none;
+		}
+	}
+	a {
+		font-weight: 500;
+		text-decoration: underline;
+		@include font-size(14);
+	}
+	.title {
+		@include font-size(28);
+		@include margin(0 0 $base-spacing * 0.75);
+		font-family: $heading-font-family;
+		color: $color-brand-primary;
+		font-weight: 200;
+		line-height: 2rem;
+	}
+
+	@include media($tablet){
+		@include margin(0 $base-spacing);
+		input[type=email]{
+			max-width: 60%;
+			float: left;
+		}
+		> a {
+			display: none;
+		}
+	}
+	@include media($mobile){
+		.title {
+			@include margin(0 0 $base-spacing / 2 0);
+			text-align: left;
+			line-height: 1em;
+		}
+		button {
+			@include margin(0);
+			@include padding($base-spacing * .35 $base-spacing / 2);
+		}
+	}
+}
+
+.vam {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.reveal-wrapper {
+	margin-bottom: 385px;
+	overflow: hidden;
+}
+@include media($tablet) {
+	.reveal-wrapper {
+		min-height: 200px;
+		margin-bottom: 0;
+	}
+	#login-user {
+		display: none;
+	}
+	footer {
+		.absolute {
+			position: relative!important;
+		}
+		&.sticky-footer {
+			position: relative!important;
+			ul {
+				@include margin(0 auto);
+				width: 100%;
+				display: table;
+				li {
+					display: table-cell;
+					width: 25%;
+					text-align: center;
+					a {
+						@include font-size(14);
+					}
+					img {
+						margin: 0 auto;
+					}
+				}
+			}
+		}
+	}
+}
+@include media($mobile) {
+	footer {
+		#map-canvas {
+			@include margin($base-spacing);
+			max-height: 100px;
+			max-width: 290px;
+		}
+	}
+	.mobile-hours, .mobile-social {
+		display: block;
+		li {
+			@include margin($base-spacing / 4);
+			display: inline-block;
+			font-size: $base-spacing * 2;
+		}
+	}
+	.mobile-hours{
+		@include font-size(18);
+		span{
+			@include font-size(18);
+		}
+	}
+}

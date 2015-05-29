@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.mall-logo {
+	float: left;
+	@include margin($base-spacing * 1.5 0);
+	img {
+		@include padding(($base-spacing/2) 0);
+		@include margin(0 auto);
+
+		@include media($tablet) {
+			@include padding($base-spacing / 2 $base-spacing);
+			float: left;
+			max-width: 300px;
+		}
+		@include media($mobile) {
+			@include margin(0);
+			@include padding(0);
+			max-width: 100%;
+		}
+	}
+}
+
+.desktop-logo {
+	display: block;
+}
+
+.mobile-logo {
+	display: none;
+}
+
+@include media($mobile) {
+	.desktop-logo {
+		display: none;
+	}
+	.mobile-logo {
+		display: block;
+	}
+	.mall-logo {
+		@include margin($base-spacing/4 0);
+		max-width: 65%;
+	}
+}

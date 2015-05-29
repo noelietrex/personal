@@ -1,0 +1,81 @@
+#operationalMessage {
+  position: absolute;
+  width: 76%;
+  height: 73px;
+  left: 0;
+  bottom: 126px;
+  background-color: $color-primary-red;
+}
+.ticker {
+  height: 30px;
+  margin: 13px;
+}
+
+@include media($mobile) {
+	#operationalMessage {
+	  width: 100%;
+	  bottom: 48px;
+	  padding: 0;
+	  height: 48px;
+	}
+	.ticker {
+		@include margin(0);
+		top: 50%!important;
+		left: $base-spacing!important;
+		right: $base-spacing!important;
+		p {
+			@include padding(0!important);
+		}
+	}
+}
+
+
+#iFeatures {
+  position: absolute;
+  width: 76%;
+  height: 73px;
+  left: 0;
+  bottom: 126px;
+  background-color: rgba($color-brand-primary, $site-alpha);
+  ul {
+	  position: absolute;
+	  top: 35%;
+	  left: 40px;
+	  right: 10px;
+	  bottom: 10%;
+	  overflow: hidden;
+	  a {
+	  	color: $color-white;
+	  }
+  }
+  .ticker {
+		position: absolute;
+		top: 18%;
+		left: 40px;
+		right: 10px;
+		bottom: 10%;
+		overflow: hidden;
+	}
+	.ticker p {
+		position: relative;
+		top: 0;
+		white-space: nowrap;
+		width: auto;
+		color: white;
+	}
+	.ticker a {
+		color: white;
+	}
+}
+
+@include media($mobile) {
+	#iFeatures {
+	  width: 100%;
+	  bottom: 48px;
+	  padding: 0;
+	  height: 48px;
+	  .ticker {
+	  	top: 32%!important;
+	  }
+	}
+}

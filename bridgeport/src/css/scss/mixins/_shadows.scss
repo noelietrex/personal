@@ -1,0 +1,30 @@
+@mixin shadow {
+  position: relative;
+
+  &:before,
+  &:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width: 300px;
+    background: $color-dark-grey;
+    box-shadow: 0 15px 10px $color-dark-grey;
+    transform: rotate(-3deg);
+  }
+
+  &:after {
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
+  }
+}
+
+@mixin inset-border {
+  -webkit-box-shadow:inset 0px -6px 0px 0px $color-brand-primary;
+  -moz-box-shadow:inset 0px -6px 0px 0px $color-brand-primary;
+  box-shadow:inset 0px -6px 0px 0px $color-brand-primary;
+}

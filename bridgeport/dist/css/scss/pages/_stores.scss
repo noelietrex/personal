@@ -1,0 +1,187 @@
+.store {
+	.tabbed_section_content h2 { display: none; }
+}
+
+#store-info {
+	width: 100%;
+	@include padding($base-spacing/2);
+	display: table;
+	min-height: 0;
+	background-color: $color-light-grey;
+	border-radius: $base-border-radius;
+	h2 {
+		color: $color-brand-primary;
+		text-transform: uppercase;
+		font-family: $heading-font-family-alt;
+		@include font-size(24);
+	}
+	ul {
+		display: table-row;
+	}
+	li {
+		display: table-cell;
+		vertical-align: top;
+		border-right: 1px solid $color-white;
+		@include padding($base-spacing);
+		&:last-child {
+			border: none;
+		}
+	}
+	.hoursTagline { display: none; }
+}
+
+#store-deal-tabs {
+	li {
+		@include padding($base-spacing / 4 $base-spacing * 2);
+		background-color: $color-light-grey;
+		color: $color-grey;
+		display: inline-block;
+		font-family: $base-font-family;
+		text-transform: uppercase;
+		font-weight: 700;
+		&.active {
+			background-color: $color-brand-primary;
+			color: $color-white;
+		}
+	}
+}
+.deal, .product {
+	@include padding($base-spacing 0);
+	border-bottom: $base-border;
+	overflow: auto;
+	&:last-child {
+		border-bottom: none;
+	}
+	&:hover {
+		cursor: pointer;
+		.thumb-wrap {
+			border-radius: 75px;
+			background-color: $color-black;
+		}
+		a.deal-thumb-cover {
+			opacity: 0.75;
+			border-radius: 75px;
+		}
+	}
+}
+
+.thumb-wrap {
+	@include margin(0 $base-spacing 0 0);
+	float: left;
+}
+
+a.deal-thumb-cover {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: $base-border-radius;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+}
+
+.sale-info-wrapper {
+	float: left;
+	h3 a {
+		font-family: $base-font-family;
+		font-weight: 700;
+		color: $color-brand-secondary;
+	}
+}
+
+.sale-end-date {
+	@include padding($base-spacing / 4 $base-spacing * 2);
+	float: right;
+	background-color: $color-primary-red;
+	color: $color-white;
+	text-transform: uppercase;
+	font-weight: 500;
+	&.notice--ends-outside-week {
+		background-color: white;
+		color: $color-primary-red;
+		border: 1px solid $color-primary-red;
+	}
+}
+
+//Product From Store Page
+#product-all-wrapper {
+	overflow: auto;
+}
+
+.product-top-logo {
+	@include horizontal-center;
+	@include border-radius;
+	@include padding($base-spacing);
+	@include margin(0 0 $base-spacing 0);
+	display: inline-block;
+	border: $base-border;
+}
+
+.product-image-wrapper, .sale-image-wrapper {
+	@include span-columns(10);
+	@include padding($base-spacing * 2);
+	float: left;
+	background-color: $color-light-grey;
+	img {
+		@include horizontal-center;
+		max-width: 350px;
+	}
+}
+
+.visit-share {
+	li {
+		display: inline-block;
+	}
+	img {
+		width: 50px;
+	}
+}
+
+.more-products-wrapper {
+	@include padding($base-spacing * 2);
+	clear: both;
+	li {
+		display: inline-block;
+	}
+}
+
+@include media($tablet) {
+	.store aside.sidebar {
+		display: none;
+	}
+	.social-modal { display: none;	}
+}
+
+@include media($mobile) {
+	#store-deal-tabs {
+		li {
+			@include margin($base-spacing / 4 0);
+			width: 100%;
+		}
+	}
+	#store-info {
+		@include margin($base-spacing 0);
+		@include padding(0);
+		ul {
+			display: initial;
+		}
+		li {
+			display: block;
+			border-right: none;
+			border-bottom: 1px solid $color-white;
+			&:last-child {
+				border: none;
+			}
+		}
+	}
+	.thumb-wrap {
+		clear: both;
+	}
+	.sale-info-wrapper {
+		width: 100%;
+	}
+	.sale-end-date {
+		float: left;
+		clear: both;
+	}
+}

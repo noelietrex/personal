@@ -1,0 +1,74 @@
+.directory-form li {
+  display: inline-block;
+}
+.asterisk {
+	@include margin($base-spacing / 2 0 0 $base-spacing);
+	float: left;
+	@include media($tablet) {
+		@include margin(0 0 $base-spacing);
+	}
+}
+.directory-form {
+	float: left;
+}
+.directory {
+	li.tabs {
+		button {
+			background-color: $color-grey;
+		}
+		&.active button{
+			background-color: $color-brand-primary;
+		}
+	}
+	.left {
+		float: left;
+		max-width: 48%;
+		margin-right: 2%;
+		margin-top: $base-spacing;
+		clear: left;
+	}
+	.right {
+		float: right;
+		max-width: 50%;
+		margin-top: $base-spacing;
+	}
+	@include media($tablet) {
+		.left, .right {
+			width: 100%;
+			margin: 0;
+			float: none;
+		}
+	}
+	.left, .right {
+		a {
+	  	@include font-size(18);
+	  	color: $color-brand-secondary;
+	  	font-weight: 500;
+	  	&:hover {
+	  		color: $color-brand-primary;
+	  	}
+	  }
+		li {
+			@include margin(0 0 $base-spacing / 2 0);
+			figcaption {
+				display: none;
+			}
+			&:hover {
+				cursor: pointer;
+				figcaption {
+					display: block;
+				}
+			}
+		}
+	}
+	figcaption {
+		@include padding($base-spacing);
+		@include margin(-$base-spacing*10 0 0 $base-spacing*4);
+		position: absolute;
+		background-color: $color-white;
+		border: $base-border;
+		border-radius: $base-border-radius;
+		box-shadow: 0 0 1px $color-light-grey;
+		max-width: 175px;
+	}
+}

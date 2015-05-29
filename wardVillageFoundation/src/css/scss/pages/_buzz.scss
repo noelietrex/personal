@@ -1,0 +1,45 @@
+// =Buzz
+
+.featureOnHomePageMain-cnt-row.featuredArticle-cnt-row {
+	@include margin($base-spacing 0 0 0);
+	@include padding(0 0 $base-spacing 0);
+	overflow: auto;
+	border-bottom: $base-border;
+}
+
+.mf_feature___featureTitle a {
+	@include font-size(24);
+	font-weight: 200;
+	font-family: $heading-font-family;
+	color: $heading-color-primary;
+}
+
+.mf_feature___featureImage {
+	float: left;
+	max-width: 250px;
+	@include margin(0 $base-spacing 0 0);
+	img {
+		border: $base-border;
+	}
+}
+
+.mf_feature___featureTeaser a{
+	color: $color-brand-tertiary;
+}
+
+.bubble-wrpr.tbl__mf_feature.featureCarouselOnShoptopiaHomePage-bubble-wrpr.carouselFancy600-format-bubble-wrpr.list-function-bubble-wrpr.featureDisplay-bubble-wrpr {
+	display: none;
+}
+
+@include media($mobile) {
+	.bubble-wrpr.tbl__mf_feature.featureCarouselOnShoptopiaHomePage-bubble-wrpr.carouselFancy600-format-bubble-wrpr.list-function-bubble-wrpr.featureDisplay-bubble-wrpr {
+  	display: none;
+	}
+	.mf_feature___featureTeaser {
+		clear: both;
+	}
+	.mf_feature___featureImage {
+		@include margin($base-spacing 0);
+		max-width: 100%;
+	}
+}

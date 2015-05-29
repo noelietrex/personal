@@ -1,0 +1,24 @@
+#jobWidget {
+	@include margin($base-spacing * 2 0);
+}
+
+.job {
+	@include padding($base-spacing 0);
+	border-bottom: $base-border;
+	overflow: auto;
+	&:last-child {
+		border-bottom: none;
+	}
+	img {
+		@include padding(0 $base-spacing 0 0);
+		float: left;
+	}
+	> div {
+		float: left;
+	}
+}
+
+p.disclaimer {
+	@include margin($base-spacing * 2 0 $base-spacing 0);
+	@incldue font-size($disclaimer-text);
+}

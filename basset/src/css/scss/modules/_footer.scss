@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+footer {
+	@include padding(($base-spacing*2) 0);
+	@include box-shadow(inset 0 3px 10px 0 $color-grey);
+	background-color: $footer-bg;
+	color: $color-grey;
+	text-align: center;
+
+	.content {
+		@include padding(0);
+	}
+
+	.contact-social {
+		@include outer-container;
+		@include padding($base-spacing*2 0);
+	}
+
+	.footer-contact {
+		@include span-columns(4);
+		text-align: left;
+
+		@include media($tablet) {
+			@include span-columns(8);
+
+		}
+
+		@include media($mobile) {
+			@include span-columns(4);
+			@include margin(0);
+			text-align: center;
+		}
+
+		form {
+			input[type]:not([type=range]):not([type=submit]) {
+				width: auto;
+				margin-bottom: .5em;
+			}
+
+			button[type=submit] {
+				@include padding(.525em);
+				border: 0;
+				border: 1px solid currentColor;
+				outline: none;
+				background-color: $color-white;
+				color: $footer-link-color;
+			}
+		}
+	}
+
+	.footer-social {
+		// @include span-columns(4);
+		// @include shift(4);
+		text-align: right;
+		float: right;
+		width: auto;
+
+		ul {
+			@include padding(0);
+			@include horizontal-list;
+			margin: 0;
+			text-align: center;
+
+			li {
+				@include border-radius(50%);
+				@include size(35px);
+				display: inline-block;
+				margin-right: 1em;
+				padding: 5px;
+
+				&:last-child {
+					margin: 0;
+				}
+			}
+		}
+
+		i {
+			color: $color-white;
+			font-size: 2em;
+		}
+
+		@include media($tablet) {
+			@include span-columns(8);
+		}
+
+		@include media($mobile) {
+			display: none;
+		}
+	}
+
+	ul {
+		@include horizontal-list;
+		margin: $base-spacing auto;
+
+		li {
+			margin-right: $base-spacing *2;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+
+	a {
+		color: $footer-link-color;
+
+		&:hover {
+			color: $footer-link-color-hover;
+		}
+	}
+}
+
+// =email sign-up-box
+.sign-up-box {
+	span.title {
+		@include margin($base-spacing/2 0 0 0);
+		float: left;
+		clear: both;
+	}
+}
+.email_signup_widget_v1 {
+	input[type]:not([type=range]):not([type=submit]), select, textarea {
+		width: auto;
+		max-width: 80%;
+		min-width: 265px;
+		float: left;
+	}
+	#eWidgetSubmit {
+		@include margin(0 0 0 $base-spacing/2);
+		float: left;
+		border: $base-border;
+		button {
+			@include padding($base-spacing * 0.6 $base-spacing);
+		}
+		.fa {
+			color: $color-grey;
+		}
+	}
+}
+@include media($mobile){
+	.email_signup_widget_v1 {
+		input[type]:not([type=range]):not([type=submit]), select, textarea {
+			width: 76%;
+			min-width: 0;
+		}
+	}
+	.email_signup_widget_v1 {
+		width: 100%;
+		margin: 0 auto;
+	}
+	footer {
+		.container {
+			@include padding(0 $base-spacing * 2);
+		}
+	}
+}

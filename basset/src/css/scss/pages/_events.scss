@@ -1,0 +1,322 @@
+.component-venues {
+	height: auto;
+	overflow: auto;
+	li {
+		display: block;
+	  margin-right: 1.15243%;
+	  width: 32.53133%;
+	  position: relative;
+	  overflow: hidden;
+	  float: left;
+	  background-color: $color-black;
+	  &:last-child {
+	  	margin-right: 0;
+	  }
+		&:hover {
+			.venue-hover-overlay {
+				top: 0;
+			}
+		}
+		img {
+			width: 100%;
+		}
+	}
+}
+.venue-hover-overlay {
+	@include padding($base-spacing / 4 $base-spacing);
+  min-height: 180px;
+  width: 100%;
+  position: absolute;
+  top: 75%;
+  background-color: rgba($color-brand-tertiary,.9);
+  transition: all .5s cubic-bezier(.55,.055,.675,.19);
+  color: $color-white;
+  &:hover p, &:visited, &:hover {
+  	color: $color-white;
+  }
+  h3 {
+  	@include font-size(18);
+  	text-transform: uppercase;
+  	text-align: center;
+  	line-height: 2em;
+  	color: $color-white;
+  	font-family: $base-font-family;
+  }
+}
+
+
+
+
+.center-events {
+	ul {
+		overflow: auto;
+	}
+	li {
+		@include span-columns(6.66);
+		position: relative;
+		overflow: hidden;
+		float: left;
+		h2, a, p {
+			color: $color-white;
+		}
+		img {
+			width: 100%;
+			z-index: 1;
+			&:hover {
+				cursor: pointer;
+			}
+		}
+		.event-overlay {
+			@include padding($base-spacing / 4 $base-spacing);
+			min-height: 170px;
+			width: 100%;
+			position: absolute;
+			top: 75%;
+			background-color: rgba($color-brand-quaternary, .9);
+			@include transition(all 0.5s $ease-in-cubic);
+		}
+		&:hover .event-overlay {
+			display: block;
+			top: 0;
+		}
+	}
+	@include media($mobile){
+		li {
+			@include span-columns(4);
+		}
+	}
+}
+
+#calendararea {
+	@include margin($base-spacing * 2 0 $base-spacing);
+	@include padding(0 0 $base-spacing 0);
+	border-bottom: $base-border;
+	height: auto;
+	overflow: auto;
+	#calendar {
+		@include margin(0 $base-spacing * 2 0 0);
+	}
+	table {
+		@include padding(0);
+		float: left;
+		tr {
+			td {
+				@include padding(0);
+				vertical-align: middle;
+			}
+			&#dayrow th {
+				max-width: 52px;
+				overflow: hidden;
+				text-transform: uppercase;
+				padding-bottom: 5px;
+				text-align: center;
+			}
+			&.weekrow {
+				td { 
+					&.inside-mon .day {
+						background-color: $color-grey;
+						&:hover {
+							background-color: $color-brand-tertiary;
+						}
+					}
+					&.outside-mon .day {
+						background-color: $color-light-grey;
+						&:hover {
+							background-color: $color-brand-tertiary;
+						}
+					}
+					&.current-day .day, &.inside-event .day { background-color: $color-brand-primary; }
+					&.current-day .day {
+						box-sizing: border-box;
+						-moz-box-sizing: border-box;
+						-webkit-box-sizing: border-box;
+						border: 3px solid $color-brand-tertiary;
+					}
+					&.inside-event:hover .day { background-color: $color-brand-tertiary;}
+				}
+			}
+			&#monthrow #currentmon {
+				text-align: center;
+				#prevmon, #nextmon {
+					display: inline; 
+					vertical-align: middle;
+					a {
+						color: $color-black; 
+						span {
+							background: url("/mimages/Cypress15/btn-calendar-nav.png") left center no-repeat;
+							display: inline-block;
+							width: 42px;
+							height: 40px;
+							position: relative;
+							top: 0;
+						}
+					}
+				}
+				#prevmon {
+					background: url(/mimages/Cypress15/btn-calendar-nav-grey.png) left center no-repeat;
+				  display: inline-block;
+				  width: 42px;
+				  height: 40px;
+				  position: relative;
+				  top: -2px;
+				}
+				#nextmon a span {
+					background-position: right center;
+					top: 14px;
+				}
+				h2 {
+					@include margin(0 $base-spacing);
+					@include font-size(26);
+					font-weight: bold;
+					color: $color-dark-grey;
+					display:inline-block;
+					text-transform: uppercase;
+				}
+			}
+			.day {
+				@include margin(1px);
+				width: 4em;
+  			height: 3em;
+			}
+			.date { height: 100%; text-align: center;
+				.daynumber { color: #fff; font: 100 1.5em/2em Helvetica, Arial, sans-serif; display: block; width: 100%; height: 100%; cursor: pointer; }
+			}
+			ul, ul li { list-style:none outside none; margin:0; padding:0; }
+			ul li { font-size:.857142em; line-height:1.2em; margin:0 0 .5em; }
+		}
+		.feedevent img.defaultThumb { border:4px solid #fff;}
+	}
+	@include media($tablet){
+		@include span-columns(8);
+	}
+	@include media($mobile){
+		display: none;
+	}
+}
+#calendar-date-info {
+	float: left;
+	margin-top: $base-spacing;
+	max-width: 56%;
+	h2 {
+		@include font-size(26);
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $color-dark-grey;
+	}
+}
+.other-events {
+	@include margin($base-spacing 0 0 0);
+	@include padding($base-spacing 0 0 0);
+	border-top: $base-border;
+	width: 100%;
+	clear: both;
+}
+
+.featured {
+	img {
+		@include margin(0 $base-spacing $base-spacing 0);
+		float: left;
+		border: $base-border;
+	}
+}
+.featuredevent {
+  @include padding($base-spacing 0 0);
+  overflow: auto;
+}
+
+.feedevent {
+	overflow: auto;
+	border-bottom: $base-border;
+	@include margin(0 0 $base-spacing 0);
+	@include padding(0 0 $base-spacing 0);
+	&:last-child {
+		border: none;
+	}
+	.left {
+		float: left;
+		@include media($mobile){
+			@include margin(0 0 $base-spacing);
+		}
+	}
+}
+
+.eventThumbnail {
+	width: 200px;
+	height: 150px;
+	background-color: $color-light-grey;
+	display: table-cell;
+	vertical-align: middle;
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.other {
+	li {
+		@include padding($base-spacing 0);
+		clear: both;
+		overflow: hidden;
+		border-bottom: $base-border;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	.event-pic {
+		@include margin(0 $base-spacing 0 0);
+		float: left;
+		width: 150px;
+		height: auto;
+		overflow: hidden;
+		background-color: $color-light-grey;
+		border: $base-border;
+	}
+}
+
+.eventinfo {
+	@include margin($base-spacing 0 0);
+	@include padding(0 0 $base-spacing 0);
+	width: 100%;
+	float: left;
+	border-bottom: $base-border;
+	a {
+		color: $color-brand-tertiary;
+	}
+	&:last-child {
+		border-bottom: none;
+	}
+	h4 a {
+		color: $color-brand-secondary;
+	}
+}
+
+h4.eventtitle a {
+	color: $color-grey;
+}
+
+ul.featured {
+	@include margin(0 0 $base-spacing 0);
+	@include padding(0 0 $base-spacing 0);
+	border-bottom: $base-border;
+}
+.event-pic {
+	min-height: 150px;
+}
+
+
+@include media($tablet) {
+	.component-venues {
+		display: none;
+	}
+	table#calendar, #calendar-date-info {
+		max-width: 100%;
+	}
+	.center-events {
+		display: none;
+	}
+	#calendararea {
+		#calendar, #calendar-date-info {
+			@include span-columns(10);
+		}
+	}
+}

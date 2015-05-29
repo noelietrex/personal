@@ -1,0 +1,55 @@
+section.home {
+	@include padding(0);
+	background-color: transparent;
+	@include media($mobile) {
+		@include margin(0);
+		width: 100%;
+		overflow: hidden;
+	}
+}
+ul#hero-carousel {
+	@include margin(0);
+}
+.home {
+	.hero-banner .container {
+		@include padding(0);
+	}
+	.component-social-bar .container{
+		@include padding(0);
+	}
+}
+
+.home-blurb {
+	@include padding($base-spacing * 2 0);
+	width: 100%;
+	background: rgba($color-brand-tertiary, $site-alpha);
+	position: absolute;
+	z-index: 9;
+	text-align: center;
+	top: 30%;
+	.container {
+		@include margin(0 auto);
+		max-width: 500px;
+	}
+	p {
+		@include font-size(15);
+		line-height: 2em;
+	}
+}
+.companylogo {
+  position: absolute;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 9;
+  clear: both;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 30%;
+}
+@include media($mobile) {
+	.home-blurb {
+		position: relative;
+		top: initial;
+	}
+}

@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.box-column {
+	@extend %clearfix !optional;
+	@include margin($base-spacing / 2, 0, $base-spacing);
+	@include padding($base-spacing);
+	border: 1px solid $color-light-grey;
+	@include border-radius;
+	background: $color-white;
+	overflow: auto;
+
+	@include media($mobile) {
+		@include padding($base-spacing / 2);
+	}
+}

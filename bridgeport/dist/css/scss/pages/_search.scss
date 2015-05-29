@@ -1,0 +1,22 @@
+.drupalHijack___image {
+	@include margin(0 $base-spacing 0 0);
+	display: inline-block;
+  float: left;
+  border: $base-border;
+  border-radius: $base-border-radius;
+  overflow: hidden;
+}
+li#searchResults_ {
+	@include padding($base-spacing 0);
+  overflow: auto;
+  border-bottom: 1px solid grey;
+  &:hover {
+  	cursor: pointer;
+  	.drupalHijack___image {
+  		border-radius: 75px;
+		}
+  }
+}
+.appHeaderDiv h3 {
+	@include margin($base-spacing * 2 0 $base-spacing 0);
+}

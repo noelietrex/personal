@@ -1,0 +1,27 @@
+.social-modal {
+	position: relative;
+	li {
+		display: inline-block;
+	}
+	.button:after, .cta:after, button:after {
+		content: none;
+	}
+}
+.socialcontent {
+	@include padding ($base-spacing);
+	left: -10px;
+	background-color: $color-white;
+	position: absolute;
+	border: $base-border;
+	border-radius: $base-border-radius;
+	box-shadow: $base-box-shadow;
+	min-width: 320px;
+	min-height: 300px;
+}
+
+.socialcontent {
+	display: none;
+}
+.js-active .socialcontent {
+	display: block;
+}

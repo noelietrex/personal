@@ -1,0 +1,29 @@
+.home {
+	.inner-wrapper {
+		background-image: url(/mimages/CenterCal15/carousel-1.jpg);
+		background-size: cover;
+	}
+	.content {
+		@include margin(0);
+		background-color: transparent;
+	}
+}
+@include media($tablet) {
+	.home {
+		.content {
+			.container {
+				min-height: 0;
+			}
+		}
+		.reveal-wrapper {
+			min-height: 800px;
+		}
+	}
+}
+@include media($mobile) {
+	.home {
+		.reveal-wrapper {
+			min-height: 200px;
+		}
+	}
+}

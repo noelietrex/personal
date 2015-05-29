@@ -1,0 +1,111 @@
+.home {
+	.content {
+		@include padding(0);
+		border: none;
+	}
+}
+.content #opMessage .container {
+	background-color: $color-black;
+	color: $color-white;
+	@include padding($base-spacing / 2 0);
+}
+.homeblock {
+	@include span-columns(4);
+	margin-top: $base-spacing;
+	margin-bottom: $base-spacing;
+	min-height: 200px;
+}
+#iFeatures {
+	max-width: 300px;
+	@include margin(0 auto);
+}
+#news {
+	height: 110px;
+	overflow-y: scroll;
+	overflow: auto;
+	list-style-type: disc;
+	border-bottom: $base-border;
+	margin-bottom: 14px; 
+	li {
+		display: block;
+		float: left;
+		@include padding(0 0 $base-spacing $base-spacing);
+		list-style-type: disc;
+	}
+	a {
+		color: $color-black;
+		float: left;
+		font-weight: 300;
+		&.alt-color {
+			text-transform: uppercase;
+			color: $color-brand-primary;
+			font-weight: bold;
+		}
+	}
+}
+.homeblock1 {
+	@include pull;
+	margin-right: $base-spacing;
+	text-align: left;
+}
+.homeblock2 {
+	@include push;
+	text-align: center;
+	#news {
+		text-align: left;
+	}
+	h3 {
+		text-align: left;
+		text-transform: uppercase;
+		color: $color-black;
+		font-weight: 300;
+	}
+	p {
+		text-align: left;
+	}
+}
+.homeblock3 {
+	@include push;
+	margin-right: 0;
+	text-align: right;
+}
+@include media($tablet) {
+	.homeblock1 {
+		text-align: center;
+	}
+	.homeblock {
+		@include span-columns(8);
+		text-align: center;
+		&.homeblock3 {
+			@include tablet-hidden;
+		}
+		&.homeblock2 {
+			margin-right: 0;
+		}
+	}
+	.carouselOverlay-wrap {
+		width: 100%;
+		position: relative;
+		top: initial;
+		@include margin(0);
+		.carouselOverlay {
+			width: 100%;
+			background: rgba($color-brand-primary,1);
+		}
+	}
+}
+@include media($mobile) {
+	.homeblock {
+		@include span-columns(4);
+	}
+	.carouselOverlay-wrap {
+		.carouselOverlay {
+			h2 {
+				font-size: 2.6rem;
+			}
+			p.h2 {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}

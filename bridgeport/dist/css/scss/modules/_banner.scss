@@ -1,0 +1,18 @@
+.banner {
+  height: auto;
+  max-height: em(500);
+  margin-bottom: $base-spacing;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    background-position: center center;
+  }
+}
+
+#topLeaderboard {
+  text-align: center;
+  #google_ads_div_bridgeportvillageHome-MobileWeb-300x50_ad_wrapper {
+	  margin-top: 0.5em;
+	}
+}

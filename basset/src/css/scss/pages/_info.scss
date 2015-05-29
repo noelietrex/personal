@@ -1,0 +1,174 @@
+// =jobs
+.job.compressed {
+	@include margin($base-spacing * 2 0 0 0);
+  @include padding(0 0 $base-spacing * 2 0);
+  border-bottom: 1px solid $color-grey;
+}
+.jobs {
+	.job {
+		position: relative;
+		overflow: auto;
+
+		a {
+			img {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				margin-right: 1em;
+			}
+		}
+	}
+
+	.job-listings {
+		@include margin(0 0 0 $base-spacing);
+		float: left;
+
+		h3,
+		h4,
+		p {
+			margin: 0 !important;
+		}
+
+		.printOnly {
+			display: none;
+		}
+	}
+
+	.fullview {
+		ul {
+			li {
+				list-style: outside disc;
+				margin-left: 1.25em;
+				border-bottom: 0;
+			}
+		}
+	}
+}
+
+.work-in-retail-logo {
+	margin: 1em 0;
+
+	span {
+		font-size: 12px;
+		color: #8e8e8e;
+		vertical-align: bottom;
+	}
+}
+
+.job-logo {
+	border: 1px solid #b5b5b5;
+  position: relative;
+  display: inline-block;
+  height: 110px;
+  width: 170px;
+  float: left;
+  box-sizing: border-box;
+  padding: 1em;
+  overflow: hidden;
+}
+
+#jobWidget {
+	display: inline-block;
+	margin-bottom: 75px !important;
+
+	h2 {
+		background: none;
+	}
+}
+
+@include media($mobile) {
+	#jobWidget .jobWidgetField {
+	  clear: both;
+	  width: 100%!important;
+	  display: block!important;
+	  padding: 0;
+	  margin: 1em 0 0 0!important;
+	  max-width: 100%!important;
+	}
+	#jobWidget .jobWidgetField input[type="text"] {
+		width: 100%!important;
+	}
+	.jobs {
+		.job-listings {
+			@include margin($base-spacing 0 0 0);
+			clear: both;
+		}
+	}
+}
+
+
+// =directions
+#mapContainer {
+	input[type]:not([type=range]):not([type=submit]), select, textarea {
+		width: auto;
+		max-width: none;
+	}
+	margin-bottom: $base-spacing;
+}
+
+#map-canvas {
+	width: 100%!important;
+}
+
+#mapDirectionsContainer {
+	float:right;
+	position:relative;
+	top:-500px;
+}
+
+.directions, .thebuzz {
+	margin-bottom:4%;
+}
+
+@include media($mobile) {
+	#mapDirectionsContainer {
+		float: left;
+		position: relative;
+		top: 0;
+		@include margin($base-spacing 0);
+	}
+}
+
+
+// =press releases
+ul.press-releases li {
+	@include margin($base-spacing 0 0 0);
+	@include padding(0 0 $base-spacing 0);
+  clear: both;
+  border-bottom: $base-border;
+  overflow: auto;
+  .event-pic {
+  	@include margin(0 $base-spacing 0 0);
+  	min-height: 100px;
+  }
+  &:last-child {
+  	border-bottom: none;
+  }
+}
+.press-img {
+	@include padding($base-spacing 0);
+	border: $base-border;
+	img {
+		max-width: 150px;
+	}
+} 
+
+// =hours
+.hours.hours-widget {
+  float: right;
+  table {
+  	@include margin(0);
+  	@include padding($base-spacing / 2);
+  	table-layout: initial;
+  }
+  td {
+  	@include padding(0);
+  }
+}
+@include media($mobile) {
+	.hours.hours-widget {
+		@include margin($base-spacing 0 0 0);
+		float: left;
+		clear: both;
+	}
+}

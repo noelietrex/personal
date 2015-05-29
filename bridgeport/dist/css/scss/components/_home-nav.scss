@@ -1,0 +1,267 @@
+@charset "UTF-8";
+
+//the little arrows over the bottom border highlight
+mark.triangle {
+	@include margin(-10px auto 0);
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 10px 0 10px;
+	border-color: $color-white transparent transparent transparent;
+	z-index: 9;
+	display: block;
+}
+
+//dealing with hiding the mega menu on desktop for inside pages but needing it for inside pages on mobile
+.home {
+	.hide-option {
+		display: block;
+	}
+}
+.hide-option {
+	display: none;
+}
+
+.highlightSection {
+	a{
+		@include inset-border;
+		color: $color-brand-primary!important;//it was either this or specify...
+		@include media($tablet) {
+			box-shadow: none;
+		}
+	}
+}
+
+.home-nav {
+	@include outer-container;
+	position: relative;
+
+	.home-nav-content-container {
+		visibility: hidden;
+		display: none;
+		@include padding($base-spacing * 5 $base-spacing $base-spacing);
+		@include border-radius(0 0 $base-border-radius $base-border-radius);
+		background: $site-bg;
+		transition: visibility 0s linear 0.4s, opacity .3s linear, top .3s ease-out;
+	}
+
+	&:hover {
+		.home-nav-content-container {
+			visibility: visible;
+			display: block;
+			background: rgba($color-off-white, .96);
+			opacity: 1;
+			z-index: 1;
+			position: absolute;
+			top: 0;
+		}
+	}
+
+	// .home-nav-content {
+	// 	@include padding($base-spacing * 5 $base-spacing $base-spacing);
+	// 	@include border-radius(0 0 $base-border-radius $base-border-radius);
+	// 	background: rgba($color-off-white, .9);
+	// 	transition: visibility 0s linear 0.4s, opacity .3s linear, top .3s ease-out;
+	// 	position: absolute;
+	// 	top: 0;
+	// }
+
+	//&:hover {
+		// .home-nav-content-container {
+		// 	visibility: visible;
+		// 	// display: block;
+		// 	// background: rgba($color-off-white, .9);
+		// 	// opacity: 1;
+		// 	// z-index: 1;
+		// 	// position: absolute;
+		// 	// top: 0;
+		// }
+	//}
+
+	.tabs {
+		display: table;
+		width: 100%;
+
+		ul {
+			width: 100%;
+			display: table-row;
+		}
+
+		li {
+			display: table-cell;
+    	border-right: 0.5em solid rgba(0,0,0,0);
+    	text-align: center;
+			position: relative;
+			z-index: 9;
+			cursor: pointer;
+
+			&:last-of-type {
+      	border: 0;
+    	}
+
+    	&:hover {
+    		a {
+    			@include inset-border;
+    			color: $color-brand-primary;
+    		}
+    	}
+
+			a {
+				@include padding($base-spacing * 0.7);
+				@include border-radius(0 0 $base-border-radius $base-border-radius);
+				@include font-size($nav-font-size);
+				background-color: $color-white;
+				color: $base-font-color;
+				display: block;
+				font-family: $heading-font-family-alt;
+				font-weight: normal;
+				color: $nav-color;
+				text-transform: uppercase;
+				text-decoration: none;
+
+			}
+
+		}
+	}
+
+	@include media($tablet) {
+		.tabs {
+			@include margin(initial);
+			min-width: none;
+
+			ul {
+				height: auto;
+				display: table-row;
+				text-align: initial;
+				border-collapse: initial;
+				border-spacing: initial;
+				width: initial;
+			}
+
+			li {
+				a {
+					@include border-radius(0);
+					&:hover{
+						box-shadow: none;
+					}
+				}
+				@include margin(0);
+				display: block;
+				border: none;
+				border-bottom: 1px solid $color-brand-primary;
+				text-align: center;
+				&:first-child {
+					border-top: 1px solid $color-brand-primary;
+				}
+			}
+		}
+	}
+}
+.home-nav-content {
+	img {
+		float: right;
+		@include margin(0 $base-spacing $base-spacing);
+	}
+	p {
+		min-width: 1091px; //crappy hack couldn't find another way
+	}
+}
+
+.navlist {
+	@include padding(0 $base-spacing 0 0);
+  clear: none;
+  min-height: 150px;
+  text-align: right;
+  a {
+  	@include font-size(16.5);
+  	color: $color-brand-secondary;
+  	font-weight: 500;
+  	&:hover {
+  		color: $color-brand-primary;
+  	}
+  }
+}
+.mobile-nav-back {
+	display: none;
+}
+
+@include media($tablet) {
+	.home-nav {
+		display: none;
+	}
+	.home {
+		.home-nav {
+			overflow: visible;
+			display: inline-block;
+			width: 100%;
+			z-index: 9999; //okay these 9s are out of control
+		}
+	}
+	.home-nav.js-mobile-screen-takeover {
+		background: rgba($color-black,0.9);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 999;
+		overflow: hidden;
+	}
+	.mobile-nav-back {
+		display: block;
+	}
+	.home-nav .tabs li.mobile-nav-back {
+		@include padding($base-spacing);
+		color: $color-brand-primary;
+		-webkit-box-shadow:inset 0px -6px 0px 0px $color-brand-primary;
+		-moz-box-shadow:inset 0px -6px 0px 0px $color-brand-primary;
+		box-shadow:inset 0px -6px 0px 0px $color-brand-primary;
+		background-color: $color-white;
+		display: block;
+	}
+	.home-nav .tabs .navlist li a {
+		text-transform: none;
+		font-family: $base-font-family;
+	}
+	.home-nav-content {
+		p, h3, img { display: none; }
+	}
+	.navlist {
+		@include padding(0);
+		text-align: left;
+	}
+	.home-nav {
+		&:hover {
+			.home-nav-content-container {
+				display: none;
+			}
+		}
+		.tabs {
+			min-width: 0;
+			padding: $base-spacing;
+			position: relative;
+			// overflow: hidden;
+			ul {
+				display: block;
+			}
+		}
+		aside {
+			@include margin(0);
+			@include padding(0);
+			width: 100%;
+			float: none;
+			border: none;
+		}
+		.home-nav-content {
+			@include padding($base-spacing);
+			position: absolute;
+			right: -100%;
+			top: 0;
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+}
+@include media($mobile) {
+	.home-nav .tabs .navlist li {
+		text-align: left;
+	}
+}

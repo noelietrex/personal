@@ -1,0 +1,16 @@
+.spotlightSidebar-cnt-row {
+  display: inline-block;
+  @include margin(null null $base-spacing);
+  @include font-size($disclaimer-text);
+
+  img {
+    float: left;
+    @include margin(null $base-spacing null null);
+  }
+
+  @include media($tablet) {
+	  img {
+	    float: none;
+	  }
+	}
+}

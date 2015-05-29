@@ -1,0 +1,143 @@
+.sales {
+	.sale {
+		overflow: auto;
+	}
+}
+// #deal-flow .tile-list__header {
+//   right: 0;
+//   top: 2.5em;
+//   position: absolute;
+//   z-index: 99;
+//   @include media($tablet){
+//     position: relative;
+//     top: 0;
+//   }
+// }
+#deal_flow_content h2 span {
+  @include font-size(32);
+  font-weight: 200;
+  font-family: $heading-font-family;
+  color: $heading-color-primary;
+}
+#deal-flow .tile-list__content {
+  max-width: 100%!important;
+}
+
+#deal-flow .tile.tile--expand .tile__wrap, #deal-flow .tile-list__content.tile-list__content--list .tile .tile__wrap {
+  min-height: 220px!important;
+  padding: $base-spacing * 2 0 $base-spacing * 2 $base-spacing * 10.1!important;
+}
+#deal-flow .tile.tile--expand .tile__thumbnail, #deal-flow .tile-list__content.tile-list__content--list .tile .tile__thumbnail, #deal-flow .tile.tile--expand .notice, #deal-flow .tile-list__content.tile-list__content--list .tile .notice {
+  top: 2em!important;
+}
+
+.deal-flow-wrapper__left {
+	@include span-columns(4);
+  @include padding(0 $base-spacing 0 0);
+  border-right: $base-border;
+  text-align: right;
+
+  @include media($mobile) {
+    @include span-columns(4);
+    @include padding(0);
+    border: none;
+  }
+  .navlist {
+  	@include padding($base-spacing 0 0);
+    @include margin($base-spacing 0 0);
+    border-top: $base-border;
+  }
+  ul {
+  	@include padding(0 $base-spacing 0 0);
+  }
+  li {
+  	@include font-size(18);
+    &.deal-flow-active {
+      color: $color-brand-primary;
+    }
+  }
+}
+.deal-flow-wrapper__right {
+  @include outer-container;
+  @include span-columns(16);
+  @include margin(0);
+  @include padding(0 0 0 $base-spacing);
+
+  @include media($mobile) {
+    @include span-columns(4);
+    @include padding(0);
+    border: none;
+  }
+  #deal-flow .tile-list__content {
+    margin: 0;
+  }
+}
+
+@include media($tablet){
+  .deal-flow-wrapper__left .navlist {
+    display: none;
+  }
+}
+@include media($mobile){
+  #deal-flow-wrapper {
+    @include margin(-1em 0 0 0);
+  }
+  li.deal-flow-filter-panel__button {
+    @include margin($base-spacing / 2 0);
+    @include padding($base-spacing / 2);
+    background-color: $color-brand-primary;
+    color: $color-white;
+    text-align: center;
+    font-weight: 500;
+    &.deal-flow-active {
+      background-color: shade($color-brand-primary, 20%);
+      color: $color-white;
+    }
+  }
+  .deal-flow-wrapper__left li.deal-flow-active {
+    color: $color-white;
+  }
+  #deal-flow .tile__thumbnail-mask {
+    display: none;
+  }
+  #deal-flow .tile.tile--expand .tile__wrap, #deal-flow .tile-list__content.tile-list__content--list .tile .tile__wrap {
+    padding: 1em 0!important; //I know, I know :\
+  }
+  .deal-flow-wrapper__left ul {
+    @include padding(0);
+  }
+}
+
+
+//Deal Flow style over-writes
+#deal-flow h3.tile__title {
+  @include font-size(22);
+  font-family: $base-font-family;
+  color: $color-brand-secondary!important;
+}
+#deal-flow .tile:hover .tile__wrap .tile__title, #deal-flow .tile:active .tile__wrap .tile__title {
+  color: $color-brand-primary!important;
+}
+#deal-flow .tile__thumbnail-mask {
+  width: 150px!important;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: $base-border-radius;
+}
+#deal-flow .tile__thumbnail-mask:after {
+  box-shadow: none!important;
+  border: none!important;
+  border-radius: 75px!important;
+  img {
+    border-radius: 75px;
+  }
+}
+.tile:hover, .tile:active {
+  .tile__thumbnail-mask {
+    border-radius: 75px!important;
+    background-color: $color-black!important;
+    img {
+      opacity: 0.75;
+    }
+  }
+}

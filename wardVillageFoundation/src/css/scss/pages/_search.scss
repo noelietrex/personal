@@ -1,0 +1,110 @@
+// =Search AKA fighting with bass is fun
+
+.info {
+	.tabwrapper, #tabwrapper {
+		@include span-columns(2);
+		float: left;
+	}
+}
+
+.searchResults-bubble-wrpr {
+	@include span-columns(10);
+	@include margin(0!important);
+	float: left;
+}
+
+.span-5.leftColumn.leftColumn5.layout85LeftColumn {
+  display: none;
+}
+
+.drupalHijack___title {
+  text-align: left!important;
+}
+
+.drupalHijack___image img {
+	border: $base-border;
+}
+
+table.galleryTable {
+	@include padding(0);
+}
+
+.span-19.last.main.main19.layout85Main {
+	@include margin($base-spacing * 2 0);
+}
+
+.searchResultsAppHeaderDiv h3 {
+	@include font-size(30);
+	font-weight: bold;
+	font-family: $heading-font-family;
+	color: $heading-color-primary;
+}
+
+li.filerGroup-SearchTabs, .tabs ul.horzlist li.current, #tabs ul.horzlist li.current {
+	background-color: transparent;
+}
+.tabs ul.horzlist li, #tabs ul.horzlist li {
+	float: left!important;
+	background-color: $color-brand-primary!important;
+	width: 100%!important;
+	text-align: left!important;
+	margin-left: 0!important;
+	a {
+		@include margin(0 $base-spacing 0 0);
+		text-align: right;
+		color: $color-white!important;
+	}
+	&.current {
+		background-color: $color-brand-tertiary!important;
+		a {
+			color: white;
+		}
+	}
+	&:hover {
+		color: $color-brand-tertiary!important;
+	}
+}
+.tabs ul.horzlist li, #tabs ul.horzlist li {
+	@include margin(0 0 0.25em 0!important);
+	@include padding(0.25em $base-spacing!important);
+}
+
+a.filterTabsLink {
+	@include font-size(18);
+	color: $color-white!important;
+	font-family: $base-font-family;
+	text-transform: none;
+}
+
+@include media($mobile){
+	#tabs ul.horzlist li, .tabs ul.horzlist li {
+		text-align: center!important;
+		background-color: $color-brand-primary!important;
+		a {
+			color: $color-white!important;
+		}
+	}
+	#tabs ul.horzlist li.current, .tabs ul.horzlist li.current, li.filerGroup-SearchTabs {
+		background-color: $color-brand-tertiary!important;
+	}
+
+	.searchResults-bubble-wrpr {
+		@include span-columns(4);
+	}
+
+	.info {
+		.tabwrapper, #tabwrapper {
+			@include span-columns(4);
+			border: none;
+		}
+	}
+
+	li.filerGroup-SearchTabs, .tabs ul.horzlist li.current, #tabs ul.horzlist li.current {
+		background-color: $color-brand-primary!important;
+		text-align: center;
+		a {
+			color: $color-white!important;
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+.mall-logo {
+  display: inline-block;
+  z-index: 9999;
+  float: left;
+  @include media($tablet) {
+  	@include margin(0 $base-spacing);
+			max-width: 60%;
+  }
+
+  @include media($mobile) {
+    display: block;
+  }
+}

@@ -1,0 +1,58 @@
+.tabs ul.horzlist li,
+#tabs ul.horzlist li {
+	&.tnav-my-profile, &.tnav-my-deals, &.homeTab, &.myStoresTab {
+		@include font-size($base-font-size);
+	}
+}
+.span-24.last.fullTop.fullTop24.layout286fullTop, #container-1737, #container-1736,
+.tbl__StorePromosExtDev.StorePromosMyDeals-bubble-wrpr.gallery3-format-bubble-wrpr.list-function-bubble-wrpr {
+	@include span(9);
+	@include padding(0);
+	clear: none;
+	float: right;
+}
+select.chzn-select, input#addStoreSubmit {
+  float: left;
+  clear: both;
+}
+input#addStoreSubmit {
+	@include margin($base-spacing 0!important);
+}
+h4.StorePromosExtDev___StoreID img {
+	border: $base-border;
+}
+.info .myStoreRight-cnt-bdy .chzn-choices, .myStoreRight-cnt-bdy .chzn-select {
+	width: 100%!important;
+}
+.appHeaderDiv.myStoreRightAppHeaderDiv {
+	clear: both;
+	h3 {
+		margin-top: $base-spacing!important;
+	}
+}
+.genericButton, input#addStoreSubmit, .mf_fan___parentId a {
+	@include padding($base-spacing $base-spacing * 2!important);
+  box-shadow: none!important;
+  text-shadow: none!important;
+  background-color: $color-brand-primary!important;
+  background: $color-brand-primary!important;
+  border-radius: 0!important;
+  border: none!important;
+  color: $color-white!important;
+  font-family: $base-font-family!important;
+  &:hover {
+  	background-color: $color-brand-tertiary!important;
+  	background: $color-brand-tertiary!important;
+		cursor: pointer;
+  }
+  &.active {
+  	background-color: $color-brand-tertiary!important;
+  	background: $color-brand-tertiary!important;
+  }
+}
+.userGender.users___userGender.fieldContainer{
+	overflow: auto;
+	label {
+		float: left;
+	}
+}
